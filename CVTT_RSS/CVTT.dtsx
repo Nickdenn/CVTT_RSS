@@ -1,0 +1,3066 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/14/2016 5:09:37 PM"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="LEONOV"
+  DTS:CreatorName="COMEPAY\denschikov"
+  DTS:DTSID="{DCD98866-EB91-4A43-915C-3AC255B1935F}"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="11.0.5583.0"
+  DTS:LocaleID="1049"
+  DTS:ObjectName="CVTT"
+  DTS:PackageType="5"
+  DTS:VersionBuild="14"
+  DTS:VersionGUID="{F9ACE29A-B1A0-4665-97E3-21A7580F3B25}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[c-rss-1\rss.frs_rss]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{4A524EA7-6CF0-42EE-B472-0328A5F24912}"
+      DTS:ObjectName="c-rss-1\rss.frs_rss">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=c-rss-1\rss;Initial Catalog=frs_rss;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[c-rss-1\rss.frs_rss1]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{A9081E70-CDF9-45EA-901D-DADAA57C1F2D}"
+      DTS:ObjectName="c-rss-1\rss.frs_rss1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=c-rss-1\rss;Initial Catalog=frs_rss;Integrated Security=True;Application Name=SSIS-CVTT-{A9081E70-CDF9-45EA-901D-DADAA57C1F2D}c-rss-1\rss.frs_rss1;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5138A658-32E9-4991-B9E4-1A8A61F0EB76}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="dt_created">
+      <DTS:VariableValue
+        DTS:DataType="7">1/1/2001</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B2BFDD01-7BEF-448D-B794-3955B876F23E}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="dt_created_comission_line">
+      <DTS:VariableValue
+        DTS:DataType="7">1/1/2001</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{BEE98AAF-513A-414D-A8B8-7BB3E0B33DAA}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="dt_created_cost">
+      <DTS:VariableValue
+        DTS:DataType="7">1/1/2001</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1A6BF25A-8FD3-486B-B1D2-B56801245932}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="dt_created_cost_line">
+      <DTS:VariableValue
+        DTS:DataType="7">1/1/2001</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{759FB18B-0A64-442A-BC86-3FA33A2708EB}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="id_audit_comission">
+      <DTS:VariableValue
+        DTS:DataType="19">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B6E17E2B-E3EC-48B6-B157-D8840807E9A8}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="id_audit_comission_line">
+      <DTS:VariableValue
+        DTS:DataType="19">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D9D48AC7-CC1A-40CB-B73C-713019213ED6}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="id_audit_cost">
+      <DTS:VariableValue
+        DTS:DataType="19">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2CA52774-68F6-4610-9BDE-82AAC8D21F0E}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="id_audit_cost_line">
+      <DTS:VariableValue
+        DTS:DataType="19">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{53B905C3-5E7A-4F07-83B9-7B52C41C5FF9}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="id_comission">
+      <DTS:VariableValue
+        DTS:DataType="19">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{53C1631B-ADE1-43A9-B4AE-E88D926142B3}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="id_comission_line">
+      <DTS:VariableValue
+        DTS:DataType="19">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2ED80A62-F3C1-4463-AC1E-F4A7290C3675}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="id_comission_row">
+      <DTS:VariableValue
+        DTS:DataType="19">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8161D1EE-B4C0-4C76-B74D-55C0DD2B71F9}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="id_cost">
+      <DTS:VariableValue
+        DTS:DataType="19">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E45FC217-705C-4AB7-9601-46C01FDC5CF5}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="id_cost_line">
+      <DTS:VariableValue
+        DTS:DataType="19">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{101383EA-9AE9-4611-AA59-A00F0EDEE995}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="id_cost_row">
+      <DTS:VariableValue
+        DTS:DataType="19">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Comission_line"
+      DTS:CreationName="SSIS.Pipeline.3"
+      DTS:Description="Задача потока данных"
+      DTS:DTSID="{bdbec528-1b6c-4fee-b9f2-34ee4284ad8c}"
+      DTS:ExecutableType="SSIS.Pipeline.3"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Comission_line"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Comission_line\Comission_line"
+              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              contactInfo="Источник &quot;OLE DB&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;7"
+              description="Источник &quot;OLE DB&quot;"
+              name="Comission_line"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Время ожидания команды, в секундах. Величина 0 означает неограниченное время ожидания."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Указывает имя объекта базы данных, используемого для открытия набора строк."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Указывает переменную, содержащую имя объекта базы данных, используемого для открытия набора строк."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Команда SQL для выполнения."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT TOP 100 PERCENT
+       [id_comission_line]
+      ,[id_comission]
+      ,[id_comission_type]
+      ,[range_from]
+      ,[range_to]
+      ,[comission]
+      ,[dt_created] as begin_date
+      ,[id_action]
+  FROM [audit].[agent_comission_line]
+  Where id_audit &gt; ?
+  ORDER BY [id_audit]</property>
+                <property
+                  dataType="System.String"
+                  description="Переменная, содержащая команду SQL для выполнения."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Вызывает безусловное использование значение свойства DefaultCodePage при описании символьных данных."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает используемый режим доступа к базе данных."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="Сопоставления между параметрами в команде SQL и переменными."
+                  name="ParameterMapping">"Параметр0:Input",{B6E17E2B-E3EC-48B6-B157-D8840807E9A8};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Comission_line\Comission_line.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[c-rss-1\rss.frs_rss]"
+                  connectionManagerRefId="Package.ConnectionManagers[c-rss-1\rss.frs_rss]"
+                  description="Соединение OLE DB среды выполнения, используемое для доступа к базе данных."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Comission_line\Comission_line.Outputs[Выход источника &quot;OLE DB&quot;]"
+                  name="Выход источника &quot;OLE DB&quot;">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Comission_line\Comission_line.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_comission_line]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Comission_line\Comission_line.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_comission_line]"
+                      lineageId="Package\Comission_line\Comission_line.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_comission_line]"
+                      name="id_comission_line"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Comission_line\Comission_line.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_comission]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Comission_line\Comission_line.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_comission]"
+                      lineageId="Package\Comission_line\Comission_line.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_comission]"
+                      name="id_comission"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Comission_line\Comission_line.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_comission_type]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Comission_line\Comission_line.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_comission_type]"
+                      lineageId="Package\Comission_line\Comission_line.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_comission_type]"
+                      name="id_comission_type"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Comission_line\Comission_line.Outputs[Выход источника &quot;OLE DB&quot;].Columns[range_from]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Comission_line\Comission_line.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[range_from]"
+                      lineageId="Package\Comission_line\Comission_line.Outputs[Выход источника &quot;OLE DB&quot;].Columns[range_from]"
+                      name="range_from"
+                      precision="19"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Comission_line\Comission_line.Outputs[Выход источника &quot;OLE DB&quot;].Columns[range_to]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Comission_line\Comission_line.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[range_to]"
+                      lineageId="Package\Comission_line\Comission_line.Outputs[Выход источника &quot;OLE DB&quot;].Columns[range_to]"
+                      name="range_to"
+                      precision="19"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Comission_line\Comission_line.Outputs[Выход источника &quot;OLE DB&quot;].Columns[comission]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Comission_line\Comission_line.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[comission]"
+                      lineageId="Package\Comission_line\Comission_line.Outputs[Выход источника &quot;OLE DB&quot;].Columns[comission]"
+                      name="comission"
+                      precision="19"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Comission_line\Comission_line.Outputs[Выход источника &quot;OLE DB&quot;].Columns[begin_date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Comission_line\Comission_line.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[begin_date]"
+                      lineageId="Package\Comission_line\Comission_line.Outputs[Выход источника &quot;OLE DB&quot;].Columns[begin_date]"
+                      name="begin_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Comission_line\Comission_line.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_action]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Comission_line\Comission_line.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_action]"
+                      lineageId="Package\Comission_line\Comission_line.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_action]"
+                      name="id_action"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Comission_line\Comission_line.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_comission_line]"
+                      dataType="i4"
+                      name="id_comission_line" />
+                    <externalMetadataColumn
+                      refId="Package\Comission_line\Comission_line.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_comission]"
+                      dataType="i4"
+                      name="id_comission" />
+                    <externalMetadataColumn
+                      refId="Package\Comission_line\Comission_line.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_comission_type]"
+                      dataType="i4"
+                      name="id_comission_type" />
+                    <externalMetadataColumn
+                      refId="Package\Comission_line\Comission_line.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[range_from]"
+                      dataType="numeric"
+                      name="range_from"
+                      precision="19"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\Comission_line\Comission_line.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[range_to]"
+                      dataType="numeric"
+                      name="range_to"
+                      precision="19"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\Comission_line\Comission_line.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[comission]"
+                      dataType="numeric"
+                      name="comission"
+                      precision="19"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\Comission_line\Comission_line.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[begin_date]"
+                      dataType="dbTimeStamp"
+                      name="begin_date" />
+                    <externalMetadataColumn
+                      refId="Package\Comission_line\Comission_line.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_action]"
+                      dataType="i4"
+                      name="id_action" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Comission_line\Comission_line.Outputs[Вывод ошибок источника &quot;OLE DB&quot;]"
+                  isErrorOut="true"
+                  name="Вывод ошибок источника &quot;OLE DB&quot;">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Comission_line\Comission_line.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_comission_line]"
+                      dataType="i4"
+                      lineageId="Package\Comission_line\Comission_line.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_comission_line]"
+                      name="id_comission_line" />
+                    <outputColumn
+                      refId="Package\Comission_line\Comission_line.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_comission]"
+                      dataType="i4"
+                      lineageId="Package\Comission_line\Comission_line.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_comission]"
+                      name="id_comission" />
+                    <outputColumn
+                      refId="Package\Comission_line\Comission_line.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_comission_type]"
+                      dataType="i4"
+                      lineageId="Package\Comission_line\Comission_line.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_comission_type]"
+                      name="id_comission_type" />
+                    <outputColumn
+                      refId="Package\Comission_line\Comission_line.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[range_from]"
+                      dataType="numeric"
+                      lineageId="Package\Comission_line\Comission_line.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[range_from]"
+                      name="range_from"
+                      precision="19"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\Comission_line\Comission_line.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[range_to]"
+                      dataType="numeric"
+                      lineageId="Package\Comission_line\Comission_line.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[range_to]"
+                      name="range_to"
+                      precision="19"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\Comission_line\Comission_line.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[comission]"
+                      dataType="numeric"
+                      lineageId="Package\Comission_line\Comission_line.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[comission]"
+                      name="comission"
+                      precision="19"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\Comission_line\Comission_line.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[begin_date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Comission_line\Comission_line.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[begin_date]"
+                      name="begin_date" />
+                    <outputColumn
+                      refId="Package\Comission_line\Comission_line.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_action]"
+                      dataType="i4"
+                      lineageId="Package\Comission_line\Comission_line.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_action]"
+                      name="id_action" />
+                    <outputColumn
+                      refId="Package\Comission_line\Comission_line.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Comission_line\Comission_line.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Comission_line\Comission_line.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Comission_line\Comission_line.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Comission_line\Загрузка строчной комиссии"
+              componentClassID="{93FFEC66-CBC8-4C7F-9C6A-CB1C17A7567D}"
+              contactInfo="Команда OLE DB;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;2"
+              description="Выполняет инструкцию SQL для каждой строки в потоке данных. Пример: вызов хранимой процедуры &quot;new employee setup&quot; для всех строк в таблице &quot;new employees&quot;. Примечание. Выполнение инструкции SQL для всех строк большого потока данных может занять длительное время."
+              name="Загрузка строчной комиссии"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Время ожидания команды, в секундах. Величина 0 означает неограниченное время ожидания."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Команда SQL для выполнения."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">Exec rss.agent_comission_line_change ?, ?, ?, ?, ?, ?, ?, ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
+                  name="DefaultCodePage">1251</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Comission_line\Загрузка строчной комиссии.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[c-rss-1\rss.frs_rss]"
+                  connectionManagerRefId="Package.ConnectionManagers[c-rss-1\rss.frs_rss]"
+                  description="Соединение OLE DB среды выполнения, используемое для доступа к базе данных."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Comission_line\Загрузка строчной комиссии.Inputs[Вход команды OLE DB]"
+                  errorOrTruncationOperation="Выполнение команды"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Вход команды OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Comission_line\Загрузка строчной комиссии.Inputs[Вход команды OLE DB].Columns[id_comission]"
+                      cachedDataType="i4"
+                      cachedName="id_comission"
+                      externalMetadataColumnId="Package\Comission_line\Загрузка строчной комиссии.Inputs[Вход команды OLE DB].ExternalColumns[@id_comission]"
+                      lineageId="Package\Comission_line\Comission_line.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_comission]" />
+                    <inputColumn
+                      refId="Package\Comission_line\Загрузка строчной комиссии.Inputs[Вход команды OLE DB].Columns[id_comission_line]"
+                      cachedDataType="i4"
+                      cachedName="id_comission_line"
+                      externalMetadataColumnId="Package\Comission_line\Загрузка строчной комиссии.Inputs[Вход команды OLE DB].ExternalColumns[@id_comission_line]"
+                      lineageId="Package\Comission_line\Comission_line.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_comission_line]" />
+                    <inputColumn
+                      refId="Package\Comission_line\Загрузка строчной комиссии.Inputs[Вход команды OLE DB].Columns[id_comission_type]"
+                      cachedDataType="i4"
+                      cachedName="id_comission_type"
+                      externalMetadataColumnId="Package\Comission_line\Загрузка строчной комиссии.Inputs[Вход команды OLE DB].ExternalColumns[@id_comission_type]"
+                      lineageId="Package\Comission_line\Comission_line.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_comission_type]" />
+                    <inputColumn
+                      refId="Package\Comission_line\Загрузка строчной комиссии.Inputs[Вход команды OLE DB].Columns[range_from]"
+                      cachedDataType="numeric"
+                      cachedName="range_from"
+                      cachedPrecision="19"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\Comission_line\Загрузка строчной комиссии.Inputs[Вход команды OLE DB].ExternalColumns[@range_from]"
+                      lineageId="Package\Comission_line\Comission_line.Outputs[Выход источника &quot;OLE DB&quot;].Columns[range_from]" />
+                    <inputColumn
+                      refId="Package\Comission_line\Загрузка строчной комиссии.Inputs[Вход команды OLE DB].Columns[range_to]"
+                      cachedDataType="numeric"
+                      cachedName="range_to"
+                      cachedPrecision="19"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\Comission_line\Загрузка строчной комиссии.Inputs[Вход команды OLE DB].ExternalColumns[@range_to]"
+                      lineageId="Package\Comission_line\Comission_line.Outputs[Выход источника &quot;OLE DB&quot;].Columns[range_to]" />
+                    <inputColumn
+                      refId="Package\Comission_line\Загрузка строчной комиссии.Inputs[Вход команды OLE DB].Columns[comission]"
+                      cachedDataType="numeric"
+                      cachedName="comission"
+                      cachedPrecision="19"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\Comission_line\Загрузка строчной комиссии.Inputs[Вход команды OLE DB].ExternalColumns[@comission]"
+                      lineageId="Package\Comission_line\Comission_line.Outputs[Выход источника &quot;OLE DB&quot;].Columns[comission]" />
+                    <inputColumn
+                      refId="Package\Comission_line\Загрузка строчной комиссии.Inputs[Вход команды OLE DB].Columns[id_action]"
+                      cachedDataType="i4"
+                      cachedName="id_action"
+                      externalMetadataColumnId="Package\Comission_line\Загрузка строчной комиссии.Inputs[Вход команды OLE DB].ExternalColumns[@id_action]"
+                      lineageId="Package\Comission_line\Comission_line.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_action]" />
+                    <inputColumn
+                      refId="Package\Comission_line\Загрузка строчной комиссии.Inputs[Вход команды OLE DB].Columns[begin_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="begin_date"
+                      externalMetadataColumnId="Package\Comission_line\Загрузка строчной комиссии.Inputs[Вход команды OLE DB].ExternalColumns[@begin_date]"
+                      lineageId="Package\Comission_line\Comission_line.Outputs[Выход источника &quot;OLE DB&quot;].Columns[begin_date]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Comission_line\Загрузка строчной комиссии.Inputs[Вход команды OLE DB].ExternalColumns[@id_comission]"
+                      dataType="i8"
+                      name="@id_comission">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Сведения о параметрах. Соответствуют значениям DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Comission_line\Загрузка строчной комиссии.Inputs[Вход команды OLE DB].ExternalColumns[@id_comission_line]"
+                      dataType="i8"
+                      name="@id_comission_line">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Сведения о параметрах. Соответствуют значениям DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Comission_line\Загрузка строчной комиссии.Inputs[Вход команды OLE DB].ExternalColumns[@id_comission_type]"
+                      dataType="i4"
+                      name="@id_comission_type">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Сведения о параметрах. Соответствуют значениям DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Comission_line\Загрузка строчной комиссии.Inputs[Вход команды OLE DB].ExternalColumns[@range_from]"
+                      dataType="numeric"
+                      name="@range_from"
+                      precision="19"
+                      scale="4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Сведения о параметрах. Соответствуют значениям DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Comission_line\Загрузка строчной комиссии.Inputs[Вход команды OLE DB].ExternalColumns[@range_to]"
+                      dataType="numeric"
+                      name="@range_to"
+                      precision="19"
+                      scale="4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Сведения о параметрах. Соответствуют значениям DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Comission_line\Загрузка строчной комиссии.Inputs[Вход команды OLE DB].ExternalColumns[@comission]"
+                      dataType="numeric"
+                      name="@comission"
+                      precision="19"
+                      scale="4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Сведения о параметрах. Соответствуют значениям DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Comission_line\Загрузка строчной комиссии.Inputs[Вход команды OLE DB].ExternalColumns[@id_action]"
+                      dataType="i4"
+                      name="@id_action">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Сведения о параметрах. Соответствуют значениям DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Comission_line\Загрузка строчной комиссии.Inputs[Вход команды OLE DB].ExternalColumns[@begin_date]"
+                      dataType="dbTimeStamp"
+                      name="@begin_date">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Сведения о параметрах. Соответствуют значениям DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Comission_line\Загрузка строчной комиссии.Outputs[Выход команды OLE DB]"
+                  exclusionGroup="1"
+                  name="Выход команды OLE DB"
+                  synchronousInputId="Package\Comission_line\Загрузка строчной комиссии.Inputs[Вход команды OLE DB]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Comission_line\Загрузка строчной комиссии.Outputs[Вывод ошибок команды OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Вывод ошибок команды OLE DB"
+                  synchronousInputId="Package\Comission_line\Загрузка строчной комиссии.Inputs[Вход команды OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Comission_line\Загрузка строчной комиссии.Outputs[Вывод ошибок команды OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Comission_line\Загрузка строчной комиссии.Outputs[Вывод ошибок команды OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Comission_line\Загрузка строчной комиссии.Outputs[Вывод ошибок команды OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Comission_line\Загрузка строчной комиссии.Outputs[Вывод ошибок команды OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Comission_line.Paths[Выход источника &quot;OLE DB&quot;]"
+              endId="Package\Comission_line\Загрузка строчной комиссии.Inputs[Вход команды OLE DB]"
+              name="Выход источника &quot;OLE DB&quot;"
+              startId="Package\Comission_line\Comission_line.Outputs[Выход источника &quot;OLE DB&quot;]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\GetComission"
+      DTS:CreationName="SSIS.Pipeline.3"
+      DTS:Description="Задача потока данных"
+      DTS:DTSID="{002c7276-f301-4b75-ae04-1a22a5fe9cec}"
+      DTS:ExecutableType="SSIS.Pipeline.3"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="GetComission"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\GetComission\ByAgents"
+              componentClassID="{93FFEC66-CBC8-4C7F-9C6A-CB1C17A7567D}"
+              contactInfo="Команда OLE DB;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;2"
+              description="Выполняет инструкцию SQL для каждой строки в потоке данных. Пример: вызов хранимой процедуры &quot;new employee setup&quot; для всех строк в таблице &quot;new employees&quot;. Примечание. Выполнение инструкции SQL для всех строк большого потока данных может занять длительное время."
+              name="ByAgents"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Время ожидания команды, в секундах. Величина 0 означает неограниченное время ожидания."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Команда SQL для выполнения."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">EXEC rss.agent_comission_change ?, ?, ?, ?, ?, ?, ?, ?, ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
+                  name="DefaultCodePage">1251</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\GetComission\ByAgents.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[c-rss-1\rss.frs_rss]"
+                  connectionManagerRefId="Package.ConnectionManagers[c-rss-1\rss.frs_rss]"
+                  description="Соединение OLE DB среды выполнения, используемое для доступа к базе данных."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\GetComission\ByAgents.Inputs[Вход команды OLE DB]"
+                  errorOrTruncationOperation="Выполнение команды"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Вход команды OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\GetComission\ByAgents.Inputs[Вход команды OLE DB].Columns[id_comission]"
+                      cachedDataType="i4"
+                      cachedName="id_comission"
+                      externalMetadataColumnId="Package\GetComission\ByAgents.Inputs[Вход команды OLE DB].ExternalColumns[@id_comission]"
+                      lineageId="Package\GetComission\Select Comission.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_comission]" />
+                    <inputColumn
+                      refId="Package\GetComission\ByAgents.Inputs[Вход команды OLE DB].Columns[id_agent]"
+                      cachedDataType="i4"
+                      cachedName="id_agent"
+                      externalMetadataColumnId="Package\GetComission\ByAgents.Inputs[Вход команды OLE DB].ExternalColumns[@id_agent]"
+                      lineageId="Package\GetComission\Select Comission.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_agent]" />
+                    <inputColumn
+                      refId="Package\GetComission\ByAgents.Inputs[Вход команды OLE DB].Columns[id_subagent]"
+                      cachedDataType="i4"
+                      cachedName="id_subagent"
+                      externalMetadataColumnId="Package\GetComission\ByAgents.Inputs[Вход команды OLE DB].ExternalColumns[@id_subagent]"
+                      lineageId="Package\GetComission\Select Comission.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_subagent]" />
+                    <inputColumn
+                      refId="Package\GetComission\ByAgents.Inputs[Вход команды OLE DB].Columns[id_comission_plan]"
+                      cachedDataType="i4"
+                      cachedName="id_comission_plan"
+                      externalMetadataColumnId="Package\GetComission\ByAgents.Inputs[Вход команды OLE DB].ExternalColumns[@id_comission_plan]"
+                      lineageId="Package\GetComission\Select Comission.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_comission_plan]" />
+                    <inputColumn
+                      refId="Package\GetComission\ByAgents.Inputs[Вход команды OLE DB].Columns[id_comission_type]"
+                      cachedDataType="i4"
+                      cachedName="id_comission_type"
+                      externalMetadataColumnId="Package\GetComission\ByAgents.Inputs[Вход команды OLE DB].ExternalColumns[@id_comission_type]"
+                      lineageId="Package\GetComission\Select Comission.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_comission_type]" />
+                    <inputColumn
+                      refId="Package\GetComission\ByAgents.Inputs[Вход команды OLE DB].Columns[id_provider]"
+                      cachedDataType="i4"
+                      cachedName="id_provider"
+                      externalMetadataColumnId="Package\GetComission\ByAgents.Inputs[Вход команды OLE DB].ExternalColumns[@id_provider]"
+                      lineageId="Package\GetComission\Select Comission.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_provider]" />
+                    <inputColumn
+                      refId="Package\GetComission\ByAgents.Inputs[Вход команды OLE DB].Columns[comission]"
+                      cachedDataType="numeric"
+                      cachedName="comission"
+                      cachedPrecision="19"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\GetComission\ByAgents.Inputs[Вход команды OLE DB].ExternalColumns[@comission]"
+                      lineageId="Package\GetComission\Select Comission.Outputs[Выход источника &quot;OLE DB&quot;].Columns[comission]" />
+                    <inputColumn
+                      refId="Package\GetComission\ByAgents.Inputs[Вход команды OLE DB].Columns[id_action]"
+                      cachedDataType="i4"
+                      cachedName="id_action"
+                      externalMetadataColumnId="Package\GetComission\ByAgents.Inputs[Вход команды OLE DB].ExternalColumns[@id_action]"
+                      lineageId="Package\GetComission\Select Comission.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_action]" />
+                    <inputColumn
+                      refId="Package\GetComission\ByAgents.Inputs[Вход команды OLE DB].Columns[begin_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="begin_date"
+                      externalMetadataColumnId="Package\GetComission\ByAgents.Inputs[Вход команды OLE DB].ExternalColumns[@begin_date]"
+                      lineageId="Package\GetComission\Select Comission.Outputs[Выход источника &quot;OLE DB&quot;].Columns[begin_date]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\GetComission\ByAgents.Inputs[Вход команды OLE DB].ExternalColumns[@id_comission]"
+                      dataType="i4"
+                      name="@id_comission">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Сведения о параметрах. Соответствуют значениям DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\GetComission\ByAgents.Inputs[Вход команды OLE DB].ExternalColumns[@id_agent]"
+                      dataType="i4"
+                      name="@id_agent">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Сведения о параметрах. Соответствуют значениям DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\GetComission\ByAgents.Inputs[Вход команды OLE DB].ExternalColumns[@id_subagent]"
+                      dataType="i4"
+                      name="@id_subagent">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Сведения о параметрах. Соответствуют значениям DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\GetComission\ByAgents.Inputs[Вход команды OLE DB].ExternalColumns[@id_comission_plan]"
+                      dataType="i4"
+                      name="@id_comission_plan">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Сведения о параметрах. Соответствуют значениям DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\GetComission\ByAgents.Inputs[Вход команды OLE DB].ExternalColumns[@id_comission_type]"
+                      dataType="i4"
+                      name="@id_comission_type">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Сведения о параметрах. Соответствуют значениям DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\GetComission\ByAgents.Inputs[Вход команды OLE DB].ExternalColumns[@id_provider]"
+                      dataType="i4"
+                      name="@id_provider">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Сведения о параметрах. Соответствуют значениям DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\GetComission\ByAgents.Inputs[Вход команды OLE DB].ExternalColumns[@comission]"
+                      dataType="numeric"
+                      name="@comission"
+                      precision="19"
+                      scale="4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Сведения о параметрах. Соответствуют значениям DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\GetComission\ByAgents.Inputs[Вход команды OLE DB].ExternalColumns[@id_action]"
+                      dataType="i4"
+                      name="@id_action">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Сведения о параметрах. Соответствуют значениям DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\GetComission\ByAgents.Inputs[Вход команды OLE DB].ExternalColumns[@begin_date]"
+                      dataType="dbTimeStamp"
+                      name="@begin_date">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Сведения о параметрах. Соответствуют значениям DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\GetComission\ByAgents.Outputs[Выход команды OLE DB]"
+                  exclusionGroup="1"
+                  name="Выход команды OLE DB"
+                  synchronousInputId="Package\GetComission\ByAgents.Inputs[Вход команды OLE DB]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\GetComission\ByAgents.Outputs[Вывод ошибок команды OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Вывод ошибок команды OLE DB"
+                  synchronousInputId="Package\GetComission\ByAgents.Inputs[Вход команды OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\GetComission\ByAgents.Outputs[Вывод ошибок команды OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\GetComission\ByAgents.Outputs[Вывод ошибок команды OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\GetComission\ByAgents.Outputs[Вывод ошибок команды OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\GetComission\ByAgents.Outputs[Вывод ошибок команды OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\GetComission\Select Comission"
+              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              contactInfo="Источник &quot;OLE DB&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;7"
+              description="Источник &quot;OLE DB&quot;"
+              name="Select Comission"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Время ожидания команды, в секундах. Величина 0 означает неограниченное время ожидания."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Указывает имя объекта базы данных, используемого для открытия набора строк."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Указывает переменную, содержащую имя объекта базы данных, используемого для открытия набора строк."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Команда SQL для выполнения."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [id_comission]
+      ,[id_agent]
+      ,[id_subagent]
+      ,[id_comission_plan]
+      ,[id_comission_type]
+      ,[id_provider]
+      ,[comission]
+      ,[id_action]
+      ,[dt_created] as begin_date
+FROM [audit].[agent_comission]
+Where id_audit &gt; ?
+ORDER BY id_audit</property>
+                <property
+                  dataType="System.String"
+                  description="Переменная, содержащая команду SQL для выполнения."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Вызывает безусловное использование значение свойства DefaultCodePage при описании символьных данных."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает используемый режим доступа к базе данных."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="Сопоставления между параметрами в команде SQL и переменными."
+                  name="ParameterMapping">"Параметр0:Input",{759FB18B-0A64-442A-BC86-3FA33A2708EB};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\GetComission\Select Comission.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[c-rss-1\rss.frs_rss]"
+                  connectionManagerRefId="Package.ConnectionManagers[c-rss-1\rss.frs_rss]"
+                  description="Соединение OLE DB среды выполнения, используемое для доступа к базе данных."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\GetComission\Select Comission.Outputs[Выход источника &quot;OLE DB&quot;]"
+                  name="Выход источника &quot;OLE DB&quot;">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\GetComission\Select Comission.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_comission]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GetComission\Select Comission.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_comission]"
+                      lineageId="Package\GetComission\Select Comission.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_comission]"
+                      name="id_comission"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\GetComission\Select Comission.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_agent]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GetComission\Select Comission.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_agent]"
+                      lineageId="Package\GetComission\Select Comission.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_agent]"
+                      name="id_agent"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\GetComission\Select Comission.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_subagent]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GetComission\Select Comission.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_subagent]"
+                      lineageId="Package\GetComission\Select Comission.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_subagent]"
+                      name="id_subagent"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\GetComission\Select Comission.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_comission_plan]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GetComission\Select Comission.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_comission_plan]"
+                      lineageId="Package\GetComission\Select Comission.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_comission_plan]"
+                      name="id_comission_plan"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\GetComission\Select Comission.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_comission_type]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GetComission\Select Comission.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_comission_type]"
+                      lineageId="Package\GetComission\Select Comission.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_comission_type]"
+                      name="id_comission_type"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\GetComission\Select Comission.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_provider]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GetComission\Select Comission.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_provider]"
+                      lineageId="Package\GetComission\Select Comission.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_provider]"
+                      name="id_provider"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\GetComission\Select Comission.Outputs[Выход источника &quot;OLE DB&quot;].Columns[comission]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GetComission\Select Comission.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[comission]"
+                      lineageId="Package\GetComission\Select Comission.Outputs[Выход источника &quot;OLE DB&quot;].Columns[comission]"
+                      name="comission"
+                      precision="19"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\GetComission\Select Comission.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_action]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GetComission\Select Comission.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_action]"
+                      lineageId="Package\GetComission\Select Comission.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_action]"
+                      name="id_action"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\GetComission\Select Comission.Outputs[Выход источника &quot;OLE DB&quot;].Columns[begin_date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GetComission\Select Comission.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[begin_date]"
+                      lineageId="Package\GetComission\Select Comission.Outputs[Выход источника &quot;OLE DB&quot;].Columns[begin_date]"
+                      name="begin_date"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\GetComission\Select Comission.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_comission]"
+                      dataType="i4"
+                      name="id_comission" />
+                    <externalMetadataColumn
+                      refId="Package\GetComission\Select Comission.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_agent]"
+                      dataType="i4"
+                      name="id_agent" />
+                    <externalMetadataColumn
+                      refId="Package\GetComission\Select Comission.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_subagent]"
+                      dataType="i4"
+                      name="id_subagent" />
+                    <externalMetadataColumn
+                      refId="Package\GetComission\Select Comission.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_comission_plan]"
+                      dataType="i4"
+                      name="id_comission_plan" />
+                    <externalMetadataColumn
+                      refId="Package\GetComission\Select Comission.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_comission_type]"
+                      dataType="i4"
+                      name="id_comission_type" />
+                    <externalMetadataColumn
+                      refId="Package\GetComission\Select Comission.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_provider]"
+                      dataType="i4"
+                      name="id_provider" />
+                    <externalMetadataColumn
+                      refId="Package\GetComission\Select Comission.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[comission]"
+                      dataType="numeric"
+                      name="comission"
+                      precision="19"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\GetComission\Select Comission.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_action]"
+                      dataType="i4"
+                      name="id_action" />
+                    <externalMetadataColumn
+                      refId="Package\GetComission\Select Comission.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[begin_date]"
+                      dataType="dbTimeStamp"
+                      name="begin_date" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\GetComission\Select Comission.Outputs[Вывод ошибок источника &quot;OLE DB&quot;]"
+                  isErrorOut="true"
+                  name="Вывод ошибок источника &quot;OLE DB&quot;">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\GetComission\Select Comission.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_comission]"
+                      dataType="i4"
+                      lineageId="Package\GetComission\Select Comission.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_comission]"
+                      name="id_comission" />
+                    <outputColumn
+                      refId="Package\GetComission\Select Comission.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_agent]"
+                      dataType="i4"
+                      lineageId="Package\GetComission\Select Comission.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_agent]"
+                      name="id_agent" />
+                    <outputColumn
+                      refId="Package\GetComission\Select Comission.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_subagent]"
+                      dataType="i4"
+                      lineageId="Package\GetComission\Select Comission.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_subagent]"
+                      name="id_subagent" />
+                    <outputColumn
+                      refId="Package\GetComission\Select Comission.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_comission_plan]"
+                      dataType="i4"
+                      lineageId="Package\GetComission\Select Comission.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_comission_plan]"
+                      name="id_comission_plan" />
+                    <outputColumn
+                      refId="Package\GetComission\Select Comission.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_comission_type]"
+                      dataType="i4"
+                      lineageId="Package\GetComission\Select Comission.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_comission_type]"
+                      name="id_comission_type" />
+                    <outputColumn
+                      refId="Package\GetComission\Select Comission.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_provider]"
+                      dataType="i4"
+                      lineageId="Package\GetComission\Select Comission.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_provider]"
+                      name="id_provider" />
+                    <outputColumn
+                      refId="Package\GetComission\Select Comission.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[comission]"
+                      dataType="numeric"
+                      lineageId="Package\GetComission\Select Comission.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[comission]"
+                      name="comission"
+                      precision="19"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\GetComission\Select Comission.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_action]"
+                      dataType="i4"
+                      lineageId="Package\GetComission\Select Comission.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_action]"
+                      name="id_action" />
+                    <outputColumn
+                      refId="Package\GetComission\Select Comission.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[begin_date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\GetComission\Select Comission.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[begin_date]"
+                      name="begin_date" />
+                    <outputColumn
+                      refId="Package\GetComission\Select Comission.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\GetComission\Select Comission.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\GetComission\Select Comission.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\GetComission\Select Comission.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\GetComission.Paths[Выход источника &quot;OLE DB&quot;]"
+              endId="Package\GetComission\ByAgents.Inputs[Вход команды OLE DB]"
+              name="Выход источника &quot;OLE DB&quot;"
+              startId="Package\GetComission\Select Comission.Outputs[Выход источника &quot;OLE DB&quot;]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\GetCost"
+      DTS:CreationName="SSIS.Pipeline.3"
+      DTS:Description="Задача потока данных"
+      DTS:DTSID="{41649dca-a61e-43e6-bafa-db9ff00c053b}"
+      DTS:ExecutableType="SSIS.Pipeline.3"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="GetCost"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\GetCost\ByAgentsCost"
+              componentClassID="{93FFEC66-CBC8-4C7F-9C6A-CB1C17A7567D}"
+              contactInfo="Команда OLE DB;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;2"
+              description="Выполняет инструкцию SQL для каждой строки в потоке данных. Пример: вызов хранимой процедуры &quot;new employee setup&quot; для всех строк в таблице &quot;new employees&quot;. Примечание. Выполнение инструкции SQL для всех строк большого потока данных может занять длительное время."
+              name="ByAgentsCost"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Время ожидания команды, в секундах. Величина 0 означает неограниченное время ожидания."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Команда SQL для выполнения."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">EXEC rss.agent_cost_change ?, ?, ?, ?, ?, ?, ?, ?, ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
+                  name="DefaultCodePage">1251</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\GetCost\ByAgentsCost.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[c-rss-1\rss.frs_rss]"
+                  connectionManagerRefId="Package.ConnectionManagers[c-rss-1\rss.frs_rss]"
+                  description="Соединение OLE DB среды выполнения, используемое для доступа к базе данных."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\GetCost\ByAgentsCost.Inputs[Вход команды OLE DB]"
+                  errorOrTruncationOperation="Выполнение команды"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Вход команды OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\GetCost\ByAgentsCost.Inputs[Вход команды OLE DB].Columns[id_agent]"
+                      cachedDataType="i4"
+                      cachedName="id_agent"
+                      externalMetadataColumnId="Package\GetCost\ByAgentsCost.Inputs[Вход команды OLE DB].ExternalColumns[@id_agent]"
+                      lineageId="Package\GetCost\Select Cost.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_agent]" />
+                    <inputColumn
+                      refId="Package\GetCost\ByAgentsCost.Inputs[Вход команды OLE DB].Columns[id_subagent]"
+                      cachedDataType="i4"
+                      cachedName="id_subagent"
+                      externalMetadataColumnId="Package\GetCost\ByAgentsCost.Inputs[Вход команды OLE DB].ExternalColumns[@id_subagent]"
+                      lineageId="Package\GetCost\Select Cost.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_subagent]" />
+                    <inputColumn
+                      refId="Package\GetCost\ByAgentsCost.Inputs[Вход команды OLE DB].Columns[id_comission_plan]"
+                      cachedDataType="i4"
+                      cachedName="id_comission_plan"
+                      externalMetadataColumnId="Package\GetCost\ByAgentsCost.Inputs[Вход команды OLE DB].ExternalColumns[@id_comission_plan]"
+                      lineageId="Package\GetCost\Select Cost.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_comission_plan]" />
+                    <inputColumn
+                      refId="Package\GetCost\ByAgentsCost.Inputs[Вход команды OLE DB].Columns[id_provider]"
+                      cachedDataType="i4"
+                      cachedName="id_provider"
+                      externalMetadataColumnId="Package\GetCost\ByAgentsCost.Inputs[Вход команды OLE DB].ExternalColumns[@id_provider]"
+                      lineageId="Package\GetCost\Select Cost.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_provider]" />
+                    <inputColumn
+                      refId="Package\GetCost\ByAgentsCost.Inputs[Вход команды OLE DB].Columns[id_action]"
+                      cachedDataType="i4"
+                      cachedName="id_action"
+                      externalMetadataColumnId="Package\GetCost\ByAgentsCost.Inputs[Вход команды OLE DB].ExternalColumns[@id_action]"
+                      lineageId="Package\GetCost\Select Cost.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_action]" />
+                    <inputColumn
+                      refId="Package\GetCost\ByAgentsCost.Inputs[Вход команды OLE DB].Columns[begin_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="begin_date"
+                      externalMetadataColumnId="Package\GetCost\ByAgentsCost.Inputs[Вход команды OLE DB].ExternalColumns[@begin_date]"
+                      lineageId="Package\GetCost\Select Cost.Outputs[Выход источника &quot;OLE DB&quot;].Columns[begin_date]" />
+                    <inputColumn
+                      refId="Package\GetCost\ByAgentsCost.Inputs[Вход команды OLE DB].Columns[id_cost]"
+                      cachedDataType="i4"
+                      cachedName="id_cost"
+                      externalMetadataColumnId="Package\GetCost\ByAgentsCost.Inputs[Вход команды OLE DB].ExternalColumns[@id_cost]"
+                      lineageId="Package\GetCost\Select Cost.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_cost]" />
+                    <inputColumn
+                      refId="Package\GetCost\ByAgentsCost.Inputs[Вход команды OLE DB].Columns[id_cost_type]"
+                      cachedDataType="i4"
+                      cachedName="id_cost_type"
+                      externalMetadataColumnId="Package\GetCost\ByAgentsCost.Inputs[Вход команды OLE DB].ExternalColumns[@id_cost_type]"
+                      lineageId="Package\GetCost\Select Cost.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_cost_type]" />
+                    <inputColumn
+                      refId="Package\GetCost\ByAgentsCost.Inputs[Вход команды OLE DB].Columns[cost]"
+                      cachedDataType="numeric"
+                      cachedName="cost"
+                      cachedPrecision="19"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\GetCost\ByAgentsCost.Inputs[Вход команды OLE DB].ExternalColumns[@cost]"
+                      lineageId="Package\GetCost\Select Cost.Outputs[Выход источника &quot;OLE DB&quot;].Columns[cost]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\GetCost\ByAgentsCost.Inputs[Вход команды OLE DB].ExternalColumns[@id_agent]"
+                      dataType="i4"
+                      name="@id_agent">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Сведения о параметрах. Соответствуют значениям DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\GetCost\ByAgentsCost.Inputs[Вход команды OLE DB].ExternalColumns[@id_subagent]"
+                      dataType="i4"
+                      name="@id_subagent">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Сведения о параметрах. Соответствуют значениям DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\GetCost\ByAgentsCost.Inputs[Вход команды OLE DB].ExternalColumns[@id_comission_plan]"
+                      dataType="i4"
+                      name="@id_comission_plan">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Сведения о параметрах. Соответствуют значениям DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\GetCost\ByAgentsCost.Inputs[Вход команды OLE DB].ExternalColumns[@id_provider]"
+                      dataType="i4"
+                      name="@id_provider">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Сведения о параметрах. Соответствуют значениям DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\GetCost\ByAgentsCost.Inputs[Вход команды OLE DB].ExternalColumns[@id_action]"
+                      dataType="i4"
+                      name="@id_action">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Сведения о параметрах. Соответствуют значениям DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\GetCost\ByAgentsCost.Inputs[Вход команды OLE DB].ExternalColumns[@begin_date]"
+                      dataType="dbTimeStamp"
+                      name="@begin_date">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Сведения о параметрах. Соответствуют значениям DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\GetCost\ByAgentsCost.Inputs[Вход команды OLE DB].ExternalColumns[@id_cost]"
+                      dataType="i4"
+                      name="@id_cost">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Сведения о параметрах. Соответствуют значениям DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\GetCost\ByAgentsCost.Inputs[Вход команды OLE DB].ExternalColumns[@id_cost_type]"
+                      dataType="i4"
+                      name="@id_cost_type">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Сведения о параметрах. Соответствуют значениям DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\GetCost\ByAgentsCost.Inputs[Вход команды OLE DB].ExternalColumns[@cost]"
+                      dataType="numeric"
+                      name="@cost"
+                      precision="19"
+                      scale="4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Сведения о параметрах. Соответствуют значениям DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\GetCost\ByAgentsCost.Outputs[Выход команды OLE DB]"
+                  exclusionGroup="1"
+                  name="Выход команды OLE DB"
+                  synchronousInputId="Package\GetCost\ByAgentsCost.Inputs[Вход команды OLE DB]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\GetCost\ByAgentsCost.Outputs[Вывод ошибок команды OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Вывод ошибок команды OLE DB"
+                  synchronousInputId="Package\GetCost\ByAgentsCost.Inputs[Вход команды OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\GetCost\ByAgentsCost.Outputs[Вывод ошибок команды OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\GetCost\ByAgentsCost.Outputs[Вывод ошибок команды OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\GetCost\ByAgentsCost.Outputs[Вывод ошибок команды OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\GetCost\ByAgentsCost.Outputs[Вывод ошибок команды OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\GetCost\Select Cost"
+              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              contactInfo="Источник &quot;OLE DB&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;7"
+              description="Источник &quot;OLE DB&quot;"
+              name="Select Cost"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Время ожидания команды, в секундах. Величина 0 означает неограниченное время ожидания."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Указывает имя объекта базы данных, используемого для открытия набора строк."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Указывает переменную, содержащую имя объекта базы данных, используемого для открытия набора строк."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Команда SQL для выполнения."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [id_cost]
+      ,[id_agent]
+      ,[id_subagent]
+      ,[id_comission_plan]
+      ,[id_cost_type]
+      ,[id_provider]
+      ,[cost]
+      ,[id_action]
+      ,[dt_created] as begin_date
+FROM [audit].[agent_cost]
+Where id_audit &gt;?
+ORDER BY id_audit</property>
+                <property
+                  dataType="System.String"
+                  description="Переменная, содержащая команду SQL для выполнения."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Вызывает безусловное использование значение свойства DefaultCodePage при описании символьных данных."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает используемый режим доступа к базе данных."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="Сопоставления между параметрами в команде SQL и переменными."
+                  name="ParameterMapping">"Параметр0:Input",{D9D48AC7-CC1A-40CB-B73C-713019213ED6};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\GetCost\Select Cost.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[c-rss-1\rss.frs_rss]"
+                  connectionManagerRefId="Package.ConnectionManagers[c-rss-1\rss.frs_rss]"
+                  description="Соединение OLE DB среды выполнения, используемое для доступа к базе данных."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\GetCost\Select Cost.Outputs[Выход источника &quot;OLE DB&quot;]"
+                  name="Выход источника &quot;OLE DB&quot;">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\GetCost\Select Cost.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_agent]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GetCost\Select Cost.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_agent]"
+                      lineageId="Package\GetCost\Select Cost.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_agent]"
+                      name="id_agent"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\GetCost\Select Cost.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_subagent]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GetCost\Select Cost.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_subagent]"
+                      lineageId="Package\GetCost\Select Cost.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_subagent]"
+                      name="id_subagent"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\GetCost\Select Cost.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_comission_plan]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GetCost\Select Cost.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_comission_plan]"
+                      lineageId="Package\GetCost\Select Cost.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_comission_plan]"
+                      name="id_comission_plan"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\GetCost\Select Cost.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_provider]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GetCost\Select Cost.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_provider]"
+                      lineageId="Package\GetCost\Select Cost.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_provider]"
+                      name="id_provider"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\GetCost\Select Cost.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_action]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GetCost\Select Cost.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_action]"
+                      lineageId="Package\GetCost\Select Cost.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_action]"
+                      name="id_action"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\GetCost\Select Cost.Outputs[Выход источника &quot;OLE DB&quot;].Columns[begin_date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GetCost\Select Cost.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[begin_date]"
+                      lineageId="Package\GetCost\Select Cost.Outputs[Выход источника &quot;OLE DB&quot;].Columns[begin_date]"
+                      name="begin_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\GetCost\Select Cost.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_cost]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GetCost\Select Cost.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_cost]"
+                      lineageId="Package\GetCost\Select Cost.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_cost]"
+                      name="id_cost"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\GetCost\Select Cost.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_cost_type]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GetCost\Select Cost.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_cost_type]"
+                      lineageId="Package\GetCost\Select Cost.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_cost_type]"
+                      name="id_cost_type"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\GetCost\Select Cost.Outputs[Выход источника &quot;OLE DB&quot;].Columns[cost]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GetCost\Select Cost.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[cost]"
+                      lineageId="Package\GetCost\Select Cost.Outputs[Выход источника &quot;OLE DB&quot;].Columns[cost]"
+                      name="cost"
+                      precision="19"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\GetCost\Select Cost.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_agent]"
+                      dataType="i4"
+                      name="id_agent" />
+                    <externalMetadataColumn
+                      refId="Package\GetCost\Select Cost.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_subagent]"
+                      dataType="i4"
+                      name="id_subagent" />
+                    <externalMetadataColumn
+                      refId="Package\GetCost\Select Cost.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_comission_plan]"
+                      dataType="i4"
+                      name="id_comission_plan" />
+                    <externalMetadataColumn
+                      refId="Package\GetCost\Select Cost.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_provider]"
+                      dataType="i4"
+                      name="id_provider" />
+                    <externalMetadataColumn
+                      refId="Package\GetCost\Select Cost.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_action]"
+                      dataType="i4"
+                      name="id_action" />
+                    <externalMetadataColumn
+                      refId="Package\GetCost\Select Cost.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[begin_date]"
+                      dataType="dbTimeStamp"
+                      name="begin_date" />
+                    <externalMetadataColumn
+                      refId="Package\GetCost\Select Cost.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_cost]"
+                      dataType="i4"
+                      name="id_cost" />
+                    <externalMetadataColumn
+                      refId="Package\GetCost\Select Cost.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_cost_type]"
+                      dataType="i4"
+                      name="id_cost_type" />
+                    <externalMetadataColumn
+                      refId="Package\GetCost\Select Cost.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[cost]"
+                      dataType="numeric"
+                      name="cost"
+                      precision="19"
+                      scale="4" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\GetCost\Select Cost.Outputs[Вывод ошибок источника &quot;OLE DB&quot;]"
+                  isErrorOut="true"
+                  name="Вывод ошибок источника &quot;OLE DB&quot;">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\GetCost\Select Cost.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_cost]"
+                      dataType="i4"
+                      lineageId="Package\GetCost\Select Cost.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_cost]"
+                      name="id_cost" />
+                    <outputColumn
+                      refId="Package\GetCost\Select Cost.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_agent]"
+                      dataType="i4"
+                      lineageId="Package\GetCost\Select Cost.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_agent]"
+                      name="id_agent" />
+                    <outputColumn
+                      refId="Package\GetCost\Select Cost.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_subagent]"
+                      dataType="i4"
+                      lineageId="Package\GetCost\Select Cost.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_subagent]"
+                      name="id_subagent" />
+                    <outputColumn
+                      refId="Package\GetCost\Select Cost.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_comission_plan]"
+                      dataType="i4"
+                      lineageId="Package\GetCost\Select Cost.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_comission_plan]"
+                      name="id_comission_plan" />
+                    <outputColumn
+                      refId="Package\GetCost\Select Cost.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_cost_type]"
+                      dataType="i4"
+                      lineageId="Package\GetCost\Select Cost.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_cost_type]"
+                      name="id_cost_type" />
+                    <outputColumn
+                      refId="Package\GetCost\Select Cost.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_provider]"
+                      dataType="i4"
+                      lineageId="Package\GetCost\Select Cost.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_provider]"
+                      name="id_provider" />
+                    <outputColumn
+                      refId="Package\GetCost\Select Cost.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[cost]"
+                      dataType="numeric"
+                      lineageId="Package\GetCost\Select Cost.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[cost]"
+                      name="cost"
+                      precision="19"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\GetCost\Select Cost.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_action]"
+                      dataType="i4"
+                      lineageId="Package\GetCost\Select Cost.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_action]"
+                      name="id_action" />
+                    <outputColumn
+                      refId="Package\GetCost\Select Cost.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[begin_date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\GetCost\Select Cost.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[begin_date]"
+                      name="begin_date" />
+                    <outputColumn
+                      refId="Package\GetCost\Select Cost.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\GetCost\Select Cost.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\GetCost\Select Cost.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\GetCost\Select Cost.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\GetCost.Paths[Выход источника &quot;OLE DB&quot;]"
+              endId="Package\GetCost\ByAgentsCost.Inputs[Вход команды OLE DB]"
+              name="Выход источника &quot;OLE DB&quot;"
+              startId="Package\GetCost\Select Cost.Outputs[Выход источника &quot;OLE DB&quot;]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\GetCostLine"
+      DTS:CreationName="SSIS.Pipeline.3"
+      DTS:Description="Задача потока данных"
+      DTS:DTSID="{365c9b00-8a58-4694-bfaf-bbb29eff895b}"
+      DTS:ExecutableType="SSIS.Pipeline.3"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="GetCostLine"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\GetCostLine\Cost_Line"
+              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              contactInfo="Источник &quot;OLE DB&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;7"
+              description="Источник &quot;OLE DB&quot;"
+              name="Cost_Line"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Время ожидания команды, в секундах. Величина 0 означает неограниченное время ожидания."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Указывает имя объекта базы данных, используемого для открытия набора строк."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Указывает переменную, содержащую имя объекта базы данных, используемого для открытия набора строк."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Команда SQL для выполнения."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT TOP 100 PERCENT
+       [id_cost_line]
+      ,[id_cost]
+      ,[id_cost_type]
+      ,[range_from]
+      ,[range_to]
+      ,[cost]
+      ,[dt_created] as begin_date
+      ,[id_action]
+  FROM [audit].[agent_cost_line]
+  Where id_audit &gt; ?
+  ORDER BY [id_audit]</property>
+                <property
+                  dataType="System.String"
+                  description="Переменная, содержащая команду SQL для выполнения."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Вызывает безусловное использование значение свойства DefaultCodePage при описании символьных данных."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает используемый режим доступа к базе данных."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="Сопоставления между параметрами в команде SQL и переменными."
+                  name="ParameterMapping">"Параметр0:Input",{2CA52774-68F6-4610-9BDE-82AAC8D21F0E};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\GetCostLine\Cost_Line.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[c-rss-1\rss.frs_rss]"
+                  connectionManagerRefId="Package.ConnectionManagers[c-rss-1\rss.frs_rss]"
+                  description="Соединение OLE DB среды выполнения, используемое для доступа к базе данных."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\GetCostLine\Cost_Line.Outputs[Выход источника &quot;OLE DB&quot;]"
+                  name="Выход источника &quot;OLE DB&quot;">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\GetCostLine\Cost_Line.Outputs[Выход источника &quot;OLE DB&quot;].Columns[range_from]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GetCostLine\Cost_Line.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[range_from]"
+                      lineageId="Package\GetCostLine\Cost_Line.Outputs[Выход источника &quot;OLE DB&quot;].Columns[range_from]"
+                      name="range_from"
+                      precision="19"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\GetCostLine\Cost_Line.Outputs[Выход источника &quot;OLE DB&quot;].Columns[range_to]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GetCostLine\Cost_Line.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[range_to]"
+                      lineageId="Package\GetCostLine\Cost_Line.Outputs[Выход источника &quot;OLE DB&quot;].Columns[range_to]"
+                      name="range_to"
+                      precision="19"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\GetCostLine\Cost_Line.Outputs[Выход источника &quot;OLE DB&quot;].Columns[begin_date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GetCostLine\Cost_Line.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[begin_date]"
+                      lineageId="Package\GetCostLine\Cost_Line.Outputs[Выход источника &quot;OLE DB&quot;].Columns[begin_date]"
+                      name="begin_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\GetCostLine\Cost_Line.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_action]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GetCostLine\Cost_Line.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_action]"
+                      lineageId="Package\GetCostLine\Cost_Line.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_action]"
+                      name="id_action"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\GetCostLine\Cost_Line.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_cost_line]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GetCostLine\Cost_Line.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_cost_line]"
+                      lineageId="Package\GetCostLine\Cost_Line.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_cost_line]"
+                      name="id_cost_line"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\GetCostLine\Cost_Line.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_cost]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GetCostLine\Cost_Line.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_cost]"
+                      lineageId="Package\GetCostLine\Cost_Line.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_cost]"
+                      name="id_cost"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\GetCostLine\Cost_Line.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_cost_type]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GetCostLine\Cost_Line.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_cost_type]"
+                      lineageId="Package\GetCostLine\Cost_Line.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_cost_type]"
+                      name="id_cost_type"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\GetCostLine\Cost_Line.Outputs[Выход источника &quot;OLE DB&quot;].Columns[cost]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GetCostLine\Cost_Line.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[cost]"
+                      lineageId="Package\GetCostLine\Cost_Line.Outputs[Выход источника &quot;OLE DB&quot;].Columns[cost]"
+                      name="cost"
+                      precision="19"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\GetCostLine\Cost_Line.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[range_from]"
+                      dataType="numeric"
+                      name="range_from"
+                      precision="19"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\GetCostLine\Cost_Line.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[range_to]"
+                      dataType="numeric"
+                      name="range_to"
+                      precision="19"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\GetCostLine\Cost_Line.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[begin_date]"
+                      dataType="dbTimeStamp"
+                      name="begin_date" />
+                    <externalMetadataColumn
+                      refId="Package\GetCostLine\Cost_Line.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_action]"
+                      dataType="i4"
+                      name="id_action" />
+                    <externalMetadataColumn
+                      refId="Package\GetCostLine\Cost_Line.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_cost_line]"
+                      dataType="i4"
+                      name="id_cost_line" />
+                    <externalMetadataColumn
+                      refId="Package\GetCostLine\Cost_Line.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_cost]"
+                      dataType="i4"
+                      name="id_cost" />
+                    <externalMetadataColumn
+                      refId="Package\GetCostLine\Cost_Line.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_cost_type]"
+                      dataType="i4"
+                      name="id_cost_type" />
+                    <externalMetadataColumn
+                      refId="Package\GetCostLine\Cost_Line.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[cost]"
+                      dataType="numeric"
+                      name="cost"
+                      precision="19"
+                      scale="4" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\GetCostLine\Cost_Line.Outputs[Вывод ошибок источника &quot;OLE DB&quot;]"
+                  isErrorOut="true"
+                  name="Вывод ошибок источника &quot;OLE DB&quot;">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\GetCostLine\Cost_Line.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_cost_line]"
+                      dataType="i4"
+                      lineageId="Package\GetCostLine\Cost_Line.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_cost_line]"
+                      name="id_cost_line" />
+                    <outputColumn
+                      refId="Package\GetCostLine\Cost_Line.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_cost]"
+                      dataType="i4"
+                      lineageId="Package\GetCostLine\Cost_Line.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_cost]"
+                      name="id_cost" />
+                    <outputColumn
+                      refId="Package\GetCostLine\Cost_Line.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_cost_type]"
+                      dataType="i4"
+                      lineageId="Package\GetCostLine\Cost_Line.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_cost_type]"
+                      name="id_cost_type" />
+                    <outputColumn
+                      refId="Package\GetCostLine\Cost_Line.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[range_from]"
+                      dataType="numeric"
+                      lineageId="Package\GetCostLine\Cost_Line.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[range_from]"
+                      name="range_from"
+                      precision="19"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\GetCostLine\Cost_Line.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[range_to]"
+                      dataType="numeric"
+                      lineageId="Package\GetCostLine\Cost_Line.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[range_to]"
+                      name="range_to"
+                      precision="19"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\GetCostLine\Cost_Line.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[cost]"
+                      dataType="numeric"
+                      lineageId="Package\GetCostLine\Cost_Line.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[cost]"
+                      name="cost"
+                      precision="19"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\GetCostLine\Cost_Line.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[begin_date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\GetCostLine\Cost_Line.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[begin_date]"
+                      name="begin_date" />
+                    <outputColumn
+                      refId="Package\GetCostLine\Cost_Line.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_action]"
+                      dataType="i4"
+                      lineageId="Package\GetCostLine\Cost_Line.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_action]"
+                      name="id_action" />
+                    <outputColumn
+                      refId="Package\GetCostLine\Cost_Line.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\GetCostLine\Cost_Line.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\GetCostLine\Cost_Line.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\GetCostLine\Cost_Line.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\GetCostLine\Загрузка строчной стоимости"
+              componentClassID="{93FFEC66-CBC8-4C7F-9C6A-CB1C17A7567D}"
+              contactInfo="Команда OLE DB;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;2"
+              description="Выполняет инструкцию SQL для каждой строки в потоке данных. Пример: вызов хранимой процедуры &quot;new employee setup&quot; для всех строк в таблице &quot;new employees&quot;. Примечание. Выполнение инструкции SQL для всех строк большого потока данных может занять длительное время."
+              name="Загрузка строчной стоимости"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Время ожидания команды, в секундах. Величина 0 означает неограниченное время ожидания."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Команда SQL для выполнения."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">Exec rss.agent_cost_line_change ?, ?, ?, ?, ?, ?, ?, ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
+                  name="DefaultCodePage">1251</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\GetCostLine\Загрузка строчной стоимости.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[c-rss-1\rss.frs_rss]"
+                  connectionManagerRefId="Package.ConnectionManagers[c-rss-1\rss.frs_rss]"
+                  description="Соединение OLE DB среды выполнения, используемое для доступа к базе данных."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\GetCostLine\Загрузка строчной стоимости.Inputs[Вход команды OLE DB]"
+                  errorOrTruncationOperation="Выполнение команды"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Вход команды OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\GetCostLine\Загрузка строчной стоимости.Inputs[Вход команды OLE DB].Columns[range_from]"
+                      cachedDataType="numeric"
+                      cachedName="range_from"
+                      cachedPrecision="19"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\GetCostLine\Загрузка строчной стоимости.Inputs[Вход команды OLE DB].ExternalColumns[@range_from]"
+                      lineageId="Package\GetCostLine\Cost_Line.Outputs[Выход источника &quot;OLE DB&quot;].Columns[range_from]" />
+                    <inputColumn
+                      refId="Package\GetCostLine\Загрузка строчной стоимости.Inputs[Вход команды OLE DB].Columns[range_to]"
+                      cachedDataType="numeric"
+                      cachedName="range_to"
+                      cachedPrecision="19"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\GetCostLine\Загрузка строчной стоимости.Inputs[Вход команды OLE DB].ExternalColumns[@range_to]"
+                      lineageId="Package\GetCostLine\Cost_Line.Outputs[Выход источника &quot;OLE DB&quot;].Columns[range_to]" />
+                    <inputColumn
+                      refId="Package\GetCostLine\Загрузка строчной стоимости.Inputs[Вход команды OLE DB].Columns[id_action]"
+                      cachedDataType="i4"
+                      cachedName="id_action"
+                      externalMetadataColumnId="Package\GetCostLine\Загрузка строчной стоимости.Inputs[Вход команды OLE DB].ExternalColumns[@id_action]"
+                      lineageId="Package\GetCostLine\Cost_Line.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_action]" />
+                    <inputColumn
+                      refId="Package\GetCostLine\Загрузка строчной стоимости.Inputs[Вход команды OLE DB].Columns[begin_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="begin_date"
+                      externalMetadataColumnId="Package\GetCostLine\Загрузка строчной стоимости.Inputs[Вход команды OLE DB].ExternalColumns[@begin_date]"
+                      lineageId="Package\GetCostLine\Cost_Line.Outputs[Выход источника &quot;OLE DB&quot;].Columns[begin_date]" />
+                    <inputColumn
+                      refId="Package\GetCostLine\Загрузка строчной стоимости.Inputs[Вход команды OLE DB].Columns[id_cost]"
+                      cachedDataType="i4"
+                      cachedName="id_cost"
+                      externalMetadataColumnId="Package\GetCostLine\Загрузка строчной стоимости.Inputs[Вход команды OLE DB].ExternalColumns[@id_cost]"
+                      lineageId="Package\GetCostLine\Cost_Line.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_cost]" />
+                    <inputColumn
+                      refId="Package\GetCostLine\Загрузка строчной стоимости.Inputs[Вход команды OLE DB].Columns[id_cost_line]"
+                      cachedDataType="i4"
+                      cachedName="id_cost_line"
+                      externalMetadataColumnId="Package\GetCostLine\Загрузка строчной стоимости.Inputs[Вход команды OLE DB].ExternalColumns[@id_cost_line]"
+                      lineageId="Package\GetCostLine\Cost_Line.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_cost_line]" />
+                    <inputColumn
+                      refId="Package\GetCostLine\Загрузка строчной стоимости.Inputs[Вход команды OLE DB].Columns[id_cost_type]"
+                      cachedDataType="i4"
+                      cachedName="id_cost_type"
+                      externalMetadataColumnId="Package\GetCostLine\Загрузка строчной стоимости.Inputs[Вход команды OLE DB].ExternalColumns[@id_cost_type]"
+                      lineageId="Package\GetCostLine\Cost_Line.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_cost_type]" />
+                    <inputColumn
+                      refId="Package\GetCostLine\Загрузка строчной стоимости.Inputs[Вход команды OLE DB].Columns[cost]"
+                      cachedDataType="numeric"
+                      cachedName="cost"
+                      cachedPrecision="19"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\GetCostLine\Загрузка строчной стоимости.Inputs[Вход команды OLE DB].ExternalColumns[@cost]"
+                      lineageId="Package\GetCostLine\Cost_Line.Outputs[Выход источника &quot;OLE DB&quot;].Columns[cost]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\GetCostLine\Загрузка строчной стоимости.Inputs[Вход команды OLE DB].ExternalColumns[@range_from]"
+                      dataType="numeric"
+                      name="@range_from"
+                      precision="19"
+                      scale="4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Сведения о параметрах. Соответствуют значениям DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\GetCostLine\Загрузка строчной стоимости.Inputs[Вход команды OLE DB].ExternalColumns[@range_to]"
+                      dataType="numeric"
+                      name="@range_to"
+                      precision="19"
+                      scale="4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Сведения о параметрах. Соответствуют значениям DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\GetCostLine\Загрузка строчной стоимости.Inputs[Вход команды OLE DB].ExternalColumns[@id_action]"
+                      dataType="i4"
+                      name="@id_action">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Сведения о параметрах. Соответствуют значениям DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\GetCostLine\Загрузка строчной стоимости.Inputs[Вход команды OLE DB].ExternalColumns[@begin_date]"
+                      dataType="dbTimeStamp"
+                      name="@begin_date">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Сведения о параметрах. Соответствуют значениям DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\GetCostLine\Загрузка строчной стоимости.Inputs[Вход команды OLE DB].ExternalColumns[@id_cost]"
+                      dataType="i8"
+                      name="@id_cost">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Сведения о параметрах. Соответствуют значениям DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\GetCostLine\Загрузка строчной стоимости.Inputs[Вход команды OLE DB].ExternalColumns[@id_cost_line]"
+                      dataType="i8"
+                      name="@id_cost_line">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Сведения о параметрах. Соответствуют значениям DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\GetCostLine\Загрузка строчной стоимости.Inputs[Вход команды OLE DB].ExternalColumns[@id_cost_type]"
+                      dataType="i4"
+                      name="@id_cost_type">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Сведения о параметрах. Соответствуют значениям DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\GetCostLine\Загрузка строчной стоимости.Inputs[Вход команды OLE DB].ExternalColumns[@cost]"
+                      dataType="numeric"
+                      name="@cost"
+                      precision="19"
+                      scale="4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Сведения о параметрах. Соответствуют значениям DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\GetCostLine\Загрузка строчной стоимости.Outputs[Выход команды OLE DB]"
+                  exclusionGroup="1"
+                  name="Выход команды OLE DB"
+                  synchronousInputId="Package\GetCostLine\Загрузка строчной стоимости.Inputs[Вход команды OLE DB]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\GetCostLine\Загрузка строчной стоимости.Outputs[Вывод ошибок команды OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Вывод ошибок команды OLE DB"
+                  synchronousInputId="Package\GetCostLine\Загрузка строчной стоимости.Inputs[Вход команды OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\GetCostLine\Загрузка строчной стоимости.Outputs[Вывод ошибок команды OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\GetCostLine\Загрузка строчной стоимости.Outputs[Вывод ошибок команды OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\GetCostLine\Загрузка строчной стоимости.Outputs[Вывод ошибок команды OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\GetCostLine\Загрузка строчной стоимости.Outputs[Вывод ошибок команды OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\GetCostLine.Paths[Выход источника &quot;OLE DB&quot;]"
+              endId="Package\GetCostLine\Загрузка строчной стоимости.Inputs[Вход команды OLE DB]"
+              name="Выход источника &quot;OLE DB&quot;"
+              startId="Package\GetCostLine\Cost_Line.Outputs[Выход источника &quot;OLE DB&quot;]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\GetMaxComission"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Последняя обработанная комиссия"
+      DTS:DTSID="{6bd35556-90d0-49e9-a63c-4fd4c2729ee9}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="GetMaxComission"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{4A524EA7-6CF0-42EE-B472-0328A5F24912}"
+          SQLTask:SqlStatementSource="Select TOP (1) id_comission, begin_date as dt_created&#xA;From [frs_rss].[rss].[p_comission]&#xA;Where (id_partition = 0 OR id_partition = 2)&#xA;AND id_row = &#xA;(&#xA;Select TOP (1) [id_row_max]&#xA;FROM&#xA;(&#xA;SELECT Max([id_row]) as id_row_max&#xA;  FROM [frs_rss].[rss].[p_comission]&#xA;  Where id_partition = 0&#xA;&#xA;UNION ALL&#xA;&#xA;SELECT Max([id_row]) as id_row_max&#xA;  FROM [frs_rss].[rss].[p_comission]&#xA;  Where id_partition = 2&#xA;) RM &#xA;ORDER BY [id_row_max] DESC&#xA;)"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="id_comission"
+            SQLTask:DtsVariableName="User::id_comission" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="dt_created"
+            SQLTask:DtsVariableName="User::dt_created" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\GetMaxComissionLine"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Последняя обработанная комиссия"
+      DTS:DTSID="{9e193d05-d227-4712-8993-880f48608859}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="GetMaxComissionLine"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{4A524EA7-6CF0-42EE-B472-0328A5F24912}"
+          SQLTask:SqlStatementSource="Select TOP (1) id_comission, id_comission_line, begin_date as dt_created_line&#xA;From [frs_rss].[rss].[p_comission_line]&#xA;Where (id_partition = 0 OR id_partition = 2)&#xA;AND id_row = &#xA;(&#xA;Select TOP (1) [id_row_max]&#xA;FROM&#xA;(&#xA;SELECT Max([id_row]) as id_row_max&#xA;  FROM [frs_rss].[rss].[p_comission_line]&#xA;  Where id_partition = 0&#xA;&#xA;UNION ALL&#xA;&#xA;SELECT Max([id_row]) as id_row_max&#xA;  FROM [frs_rss].[rss].[p_comission_line]&#xA;  Where id_partition = 2&#xA;) RM &#xA;ORDER BY [id_row_max] DESC&#xA;)"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="id_comission"
+            SQLTask:DtsVariableName="User::id_comission_row" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="dt_created_line"
+            SQLTask:DtsVariableName="User::dt_created_comission_line" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="id_comission_line"
+            SQLTask:DtsVariableName="User::id_comission_line" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\GetMaxCost"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Последняя обработанная комиссия"
+      DTS:DTSID="{598c8010-df24-484c-8778-193e73631c5a}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="GetMaxCost"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{4A524EA7-6CF0-42EE-B472-0328A5F24912}"
+          SQLTask:SqlStatementSource="Select TOP (1) id_cost, begin_date as dt_created_cost&#xA; FROM [frs_rss].[rss].[p_cost]&#xA;  Where id_partition IN(0,2)&#xA;  ORDER BY id_cost desc, begin_date desc"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="id_cost"
+            SQLTask:DtsVariableName="User::id_cost" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="dt_created_cost"
+            SQLTask:DtsVariableName="User::dt_created_cost" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\GetMaxCostLine"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Последняя обработанная комиссия"
+      DTS:DTSID="{91b993e0-f533-4927-93b1-7f9b977465dd}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="GetMaxCostLine"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="3">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{4A524EA7-6CF0-42EE-B472-0328A5F24912}"
+          SQLTask:SqlStatementSource="Select TOP (1) id_cost, id_cost_line, begin_date as dt_created_cost_line&#xA;From [frs_rss].[rss].[p_cost_line]&#xA;Where (id_partition = 0 OR id_partition = 2)&#xA;AND id_row = &#xA;(&#xA;Select TOP (1) [id_row_max]&#xA;FROM&#xA;(&#xA;SELECT Max([id_row]) as id_row_max&#xA;  FROM [frs_rss].[rss].[p_cost_line]&#xA;  Where id_partition = 0&#xA;&#xA;UNION ALL&#xA;&#xA;SELECT Max([id_row]) as id_row_max&#xA;  FROM [frs_rss].[rss].[p_cost_line]&#xA;  Where id_partition = 2&#xA;) RM &#xA;ORDER BY [id_row_max] DESC&#xA;)"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="id_cost"
+            SQLTask:DtsVariableName="User::id_cost_row" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="dt_created_cost_line"
+            SQLTask:DtsVariableName="User::dt_created_cost_line" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="id_cost_line"
+            SQLTask:DtsVariableName="User::id_cost_line" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\GetMaxIdAudit"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Задача &quot;Выполнение SQL&quot;"
+      DTS:DTSID="{74f1ccb3-b256-4b0c-89a3-51312c5d2809}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="GetMaxIdAudit"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A9081E70-CDF9-45EA-901D-DADAA57C1F2D}"
+          SQLTask:SqlStatementSource="Select TOP (1) @id_audit = id_audit From [audit].[agent_comission]&#xA; Where id_comission = @id_comission AND&#xA; dt_created = @dt_created" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@id_comission"
+            SQLTask:DtsVariableName="User::id_comission"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@dt_created"
+            SQLTask:DtsVariableName="User::dt_created"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="26"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@id_audit"
+            SQLTask:DtsVariableName="User::id_audit_comission"
+            SQLTask:ParameterDirection="Output"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\GetMaxIdAuditComissionLine"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Задача &quot;Выполнение SQL&quot;"
+      DTS:DTSID="{d6f9b822-d3c7-48ca-bcb9-4ea033cd8a08}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="GetMaxIdAuditComissionLine"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A9081E70-CDF9-45EA-901D-DADAA57C1F2D}"
+          SQLTask:SqlStatementSource="Select TOP (1) @id_audit_line = id_audit From [audit].[agent_comission_line]&#xA; Where id_comission = @id_comission_row AND&#xA; dt_created = @dt_created_line AND id_comission_line = @id_comission_line" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@id_comission_row"
+            SQLTask:DtsVariableName="User::id_comission_row"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@dt_created_line"
+            SQLTask:DtsVariableName="User::dt_created_comission_line"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="26"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@id_audit_line"
+            SQLTask:DtsVariableName="User::id_audit_comission_line"
+            SQLTask:ParameterDirection="Output"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@id_comission_line"
+            SQLTask:DtsVariableName="User::id_comission_line"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\GetMaxIdAuditCost"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Задача &quot;Выполнение SQL&quot;"
+      DTS:DTSID="{4712318c-5da8-4698-80b6-1cbdb715bccd}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="GetMaxIdAuditCost"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A9081E70-CDF9-45EA-901D-DADAA57C1F2D}"
+          SQLTask:SqlStatementSource="Select TOP (1) @id_audit_cost = id_audit From [audit].[agent_cost]&#xA; Where id_cost = @id_cost AND&#xA; dt_created = @dt_created_cost" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@id_cost"
+            SQLTask:DtsVariableName="User::id_cost"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@dt_created_cost"
+            SQLTask:DtsVariableName="User::dt_created_cost"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="26"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@id_audit_cost"
+            SQLTask:DtsVariableName="User::id_audit_cost"
+            SQLTask:ParameterDirection="Output"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\GetMaxIdAuditCostLine"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Задача &quot;Выполнение SQL&quot;"
+      DTS:DTSID="{72fd6143-607f-4386-84bd-af4b837fdd76}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="GetMaxIdAuditCostLine"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="3">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A9081E70-CDF9-45EA-901D-DADAA57C1F2D}"
+          SQLTask:SqlStatementSource="Select TOP (1) @id_audit_cost_line = id_audit From [audit].[agent_cost_line]&#xA; Where id_cost = @id_cost_row AND&#xA; dt_created = @dt_created_cost_line AND id_cost_line = @id_cost_line" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@id_cost_row"
+            SQLTask:DtsVariableName="User::id_cost_row"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@dt_created_cost_line"
+            SQLTask:DtsVariableName="User::dt_created_cost_line"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="26"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@id_audit_cost_line"
+            SQLTask:DtsVariableName="User::id_audit_cost_line"
+            SQLTask:ParameterDirection="Output"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@id_cost_line"
+            SQLTask:DtsVariableName="User::id_cost_line"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Ограничение]"
+      DTS:CreationName=""
+      DTS:DTSID="{f8d5f6c4-eede-4851-a3ae-656f06c3ade3}"
+      DTS:From="Package\GetMaxComission"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Ограничение"
+      DTS:To="Package\GetMaxIdAudit" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Ограничение 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{53aea3c2-c901-4109-baa8-ddabebfb422a}"
+      DTS:From="Package\GetMaxIdAudit"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Ограничение 1"
+      DTS:To="Package\GetComission" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Ограничение 1 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{2a39221e-d7ba-4ea5-8bcc-417db7923e8d}"
+      DTS:From="Package\GetMaxIdAuditCost"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Ограничение 1 1"
+      DTS:To="Package\GetCost" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Ограничение 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{1763a2bf-5c86-4908-a9ec-16ee6f02d7b3}"
+      DTS:From="Package\GetMaxComissionLine"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Ограничение 2"
+      DTS:To="Package\GetMaxIdAuditComissionLine" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Ограничение 2 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{daa91e76-835f-4a78-a8de-e84f01b2d512}"
+      DTS:From="Package\GetMaxCostLine"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Ограничение 2 1"
+      DTS:To="Package\GetMaxIdAuditCostLine" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Ограничение 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{67a8295d-dde1-4cd3-b2c5-aef0bf6343fd}"
+      DTS:From="Package\GetMaxIdAuditComissionLine"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Ограничение 3"
+      DTS:To="Package\Comission_line" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Ограничение 3 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{14431045-4de8-4bbc-a91a-629e73a5f614}"
+      DTS:From="Package\GetMaxIdAuditCostLine"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Ограничение 3 1"
+      DTS:To="Package\GetCostLine" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Ограничение 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{a9c347a8-2f27-48d4-b058-4a5c7a5d7e43}"
+      DTS:From="Package\GetMaxCost"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Ограничение 4"
+      DTS:To="Package\GetMaxIdAuditCost" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--В данном разделе CDATA содержатся сведения о макете пакета. В данном разделе содержатся сведения о координатах (x,y), ширине и высоте.-->
+<!--В случае возникновения ошибки при редактировании этого раздела вручную его можно удалить. -->
+<!--Пакет можно загрузить обычным образом, но прежние сведения о макете будут утеряны, и конструктор автоматически перераспределит элементы в области конструктора.-->
+<Objects
+  Version="sql11">
+  <!--Все приведенные ниже узлы будут содержать свойства, не влияющие на поведение среды выполнения.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Comission_line"
+          TopLeft="340,321" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\GetComission"
+          TopLeft="144,321" />
+        <NodeLayout
+          Size="118,42"
+          Id="Package\GetCost"
+          TopLeft="575,319" />
+        <NodeLayout
+          Size="137,42"
+          Id="Package\GetCostLine"
+          TopLeft="799,323" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\GetMaxComission"
+          TopLeft="144,145" />
+        <NodeLayout
+          Size="183,42"
+          Id="Package\GetMaxComissionLine"
+          TopLeft="328,143" />
+        <NodeLayout
+          Size="137,42"
+          Id="Package\GetMaxCost"
+          TopLeft="564,145" />
+        <NodeLayout
+          Size="167,42"
+          Id="Package\GetMaxCostLine"
+          TopLeft="787,145" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\GetMaxIdAudit"
+          TopLeft="140,238" />
+        <NodeLayout
+          Size="168,42"
+          Id="Package\GetMaxIdAuditComissionLine"
+          TopLeft="333,238" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\GetMaxIdAuditCost"
+          TopLeft="552,239" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\GetMaxIdAuditCostLine"
+          TopLeft="776,238" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Ограничение]"
+          TopLeft="226,187">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-10.5,51"
+              Start="0,0"
+              End="-10.5,43.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.5"
+                    Point2="0,25.5"
+                    Point3="-4,25.5" />
+                  <mssgle:LineSegment
+                    End="-6.5,25.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-6.5,25.5"
+                    Point2="-10.5,25.5"
+                    Point3="-10.5,29.5" />
+                  <mssgle:LineSegment
+                    End="-10.5,43.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Ограничение 1]"
+          TopLeft="216,280">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41"
+              Start="0,0"
+              End="0,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Ограничение 1 1]"
+          TopLeft="635.75,281">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38"
+              Start="0,0"
+              End="0,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Ограничение 2]"
+          TopLeft="418.25,185">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53"
+              Start="0,0"
+              End="0,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Ограничение 2 1]"
+          TopLeft="870.75,187">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51"
+              Start="0,0"
+              End="0,43.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Ограничение 3]"
+          TopLeft="416.25,280">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41"
+              Start="0,0"
+              End="0,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Ограничение 3 1]"
+          TopLeft="869.25,280">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43"
+              Start="0,0"
+              End="0,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Ограничение 4]"
+          TopLeft="635,187">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52"
+              Start="0,0"
+              End="0,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Comission_line">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib">
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Comission_line\Comission_line"
+          TopLeft="35.5,5.5" />
+        <NodeLayout
+          Size="221,42"
+          Id="Package\Comission_line\Загрузка строчной комиссии"
+          TopLeft="5.5,94.5" />
+        <EdgeLayout
+          Id="Package\Comission_line.Paths[Выход источника &quot;OLE DB&quot;]"
+          TopLeft="113.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47"
+              Start="0,0"
+              End="0,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <GroupLayout
+          Text="Группа "
+          ParentId="Package\Comission_line"
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="232,192"
+          Size="232,235"
+          Id="b5ef5ac8-7b1e-4b99-8474-822a06e22acf"
+          TopLeft="54,31">
+          <GroupLayout.ChildrenIds>
+            <s:String>Package\Comission_line\Comission_line</s:String>
+            <s:String>Package\Comission_line\Загрузка строчной комиссии</s:String>
+            <s:String>Package\Comission_line.Paths[Выход источника "OLE DB"]</s:String>
+          </GroupLayout.ChildrenIds>
+        </GroupLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Comission_line\Comission_line">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\GetComission">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="160,42"
+          Id="Package\GetComission\Select Comission"
+          TopLeft="65,46" />
+        <NodeLayout
+          Size="125,42"
+          Id="Package\GetComission\ByAgents"
+          TopLeft="32,229" />
+        <EdgeLayout
+          Id="Package\GetComission.Paths[Выход источника &quot;OLE DB&quot;]"
+          TopLeft="145,88">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-50.5,141"
+              Start="0,0"
+              End="-50.5,133.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,66.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,66.5"
+                    Point2="0,70.5"
+                    Point3="-4,70.5" />
+                  <mssgle:LineSegment
+                    End="-46.5,70.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-46.5,70.5"
+                    Point2="-50.5,70.5"
+                    Point3="-50.5,74.5" />
+                  <mssgle:LineSegment
+                    End="-50.5,133.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\GetComission\Select Comission">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\GetCost">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="154,42"
+          Id="Package\GetCost\Select Cost"
+          TopLeft="85,53" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\GetCost\ByAgentsCost"
+          TopLeft="29,233" />
+        <EdgeLayout
+          Id="Package\GetCost.Paths[Выход источника &quot;OLE DB&quot;]"
+          TopLeft="162,95">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-60.5,138"
+              Start="0,0"
+              End="-60.5,130.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,65" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,65"
+                    Point2="0,69"
+                    Point3="-4,69" />
+                  <mssgle:LineSegment
+                    End="-56.5,69" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-56.5,69"
+                    Point2="-60.5,69"
+                    Point3="-60.5,73" />
+                  <mssgle:LineSegment
+                    End="-60.5,130.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\GetCost\Select Cost">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\GetCostLine">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib">
+        <NodeLayout
+          Size="127,42"
+          Id="Package\GetCostLine\Cost_Line"
+          TopLeft="62.5,35.5" />
+        <NodeLayout
+          Size="226,42"
+          Id="Package\GetCostLine\Загрузка строчной стоимости"
+          TopLeft="16.5,123.5" />
+        <EdgeLayout
+          Id="Package\GetCostLine.Paths[Выход источника &quot;OLE DB&quot;]"
+          TopLeft="127.75,77.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46"
+              Start="0,0"
+              End="0,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <GroupLayout
+          Text="Группа "
+          ParentId="Package\GetCostLine"
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="260,221"
+          Size="260,264"
+          Id="b5ef5ac8-7b1e-4b99-8474-822a06e22acf"
+          TopLeft="54,31">
+          <GroupLayout.ChildrenIds>
+            <s:String>Package\GetCostLine\Cost_Line</s:String>
+            <s:String>Package\GetCostLine\Загрузка строчной стоимости</s:String>
+            <s:String>Package\GetCostLine.Paths[Выход источника "OLE DB"]</s:String>
+          </GroupLayout.ChildrenIds>
+        </GroupLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\GetCostLine\Cost_Line">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

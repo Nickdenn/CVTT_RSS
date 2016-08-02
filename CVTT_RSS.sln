@@ -1,0 +1,21 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "CVTT_RSS", "CVTT_RSS\CVTT_RSS.dtproj", "{CFBB5BBB-9812-4972-853F-FA88B9E04BF8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Build|Default = Build|Default
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CFBB5BBB-9812-4972-853F-FA88B9E04BF8}.Build|Default.ActiveCfg = Build
+		{CFBB5BBB-9812-4972-853F-FA88B9E04BF8}.Build|Default.Build.0 = Build
+		{CFBB5BBB-9812-4972-853F-FA88B9E04BF8}.Build|Default.Deploy.0 = Build
+		{CFBB5BBB-9812-4972-853F-FA88B9E04BF8}.Development|Default.ActiveCfg = Development
+		{CFBB5BBB-9812-4972-853F-FA88B9E04BF8}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
