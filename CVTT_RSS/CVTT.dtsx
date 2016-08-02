@@ -11,8 +11,8 @@
   DTS:LocaleID="1049"
   DTS:ObjectName="CVTT"
   DTS:PackageType="5"
-  DTS:VersionBuild="14"
-  DTS:VersionGUID="{F9ACE29A-B1A0-4665-97E3-21A7580F3B25}">
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{A04C4E78-D75B-4EC7-B0CC-5AFE19C482CE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2604,7 +2604,7 @@ ORDER BY id_audit</property>
         <NodeLayout
           Size="164,42"
           Id="Package\GetMaxComission"
-          TopLeft="144,145" />
+          TopLeft="136,144" />
         <NodeLayout
           Size="183,42"
           Id="Package\GetMaxComissionLine"
@@ -2635,30 +2635,18 @@ ORDER BY id_audit</property>
           TopLeft="776,238" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Ограничение]"
-          TopLeft="226,187">
+          TopLeft="216.75,186">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-10.5,51"
+              EndConnector="0,52"
               Start="0,0"
-              End="-10.5,43.5">
+              End="0,44.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21.5"
-                    Point2="0,25.5"
-                    Point3="-4,25.5" />
-                  <mssgle:LineSegment
-                    End="-6.5,25.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-6.5,25.5"
-                    Point2="-10.5,25.5"
-                    Point3="-10.5,29.5" />
-                  <mssgle:LineSegment
-                    End="-10.5,43.5" />
+                    End="0,44.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
