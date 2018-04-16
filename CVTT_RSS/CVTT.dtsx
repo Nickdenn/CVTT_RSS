@@ -11,8 +11,8 @@
   DTS:LocaleID="1049"
   DTS:ObjectName="CVTT"
   DTS:PackageType="5"
-  DTS:VersionBuild="15"
-  DTS:VersionGUID="{A04C4E78-D75B-4EC7-B0CC-5AFE19C482CE}">
+  DTS:VersionBuild="21"
+  DTS:VersionGUID="{11B66230-4609-4375-AF6F-B8AEE6E38D2C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -76,6 +76,15 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
+      DTS:DTSID="{7BA36A8E-02E5-469E-85E5-7298878870A3}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="dt_created_template2object">
+      <DTS:VariableValue
+        DTS:DataType="7">1/1/2001</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
       DTS:DTSID="{759FB18B-0A64-442A-BC86-3FA33A2708EB}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
@@ -107,6 +116,15 @@
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="id_audit_cost_line">
+      <DTS:VariableValue
+        DTS:DataType="19">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7C81EB71-9A90-4642-A058-A223BCF9E320}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="id_audit_template2object">
       <DTS:VariableValue
         DTS:DataType="19">0</DTS:VariableValue>
     </DTS:Variable>
@@ -161,6 +179,15 @@
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="id_cost_row">
+      <DTS:VariableValue
+        DTS:DataType="19">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{474DA126-3F54-4211-B287-3C2E2FADCEAF}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="id_template2object">
       <DTS:VariableValue
         DTS:DataType="19">0</DTS:VariableValue>
     </DTS:Variable>
@@ -2506,6 +2533,513 @@ ORDER BY id_audit</property>
         </SQLTask:SqlTaskData>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\GetMaxIdAuditTemplate2object"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Задача &quot;Выполнение SQL&quot;"
+      DTS:DTSID="{10640141-13b0-4f29-b29b-5d9fe1503ab8}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="GetMaxIdAuditTemplate2object"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="4">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A9081E70-CDF9-45EA-901D-DADAA57C1F2D}"
+          SQLTask:SqlStatementSource="Select TOP (1) @id_audit_template2object = id_audit&#xA; From [audit].[template_template2object]&#xA; Where id_template2object = @id_template2object AND&#xA; dt_created = @dt_created_template2object&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@id_template2object"
+            SQLTask:DtsVariableName="User::id_template2object"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@dt_created_template2object"
+            SQLTask:DtsVariableName="User::dt_created_template2object"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="26"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@id_audit_template2object"
+            SQLTask:DtsVariableName="User::id_audit_template2object"
+            SQLTask:ParameterDirection="Output"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\GetMaxTemplate2object"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Последняя обработанная комиссия"
+      DTS:DTSID="{76c40c54-9a60-49e2-a810-60ad2287e5f2}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="GetMaxTemplate2object"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="4">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{4A524EA7-6CF0-42EE-B472-0328A5F24912}"
+          SQLTask:SqlStatementSource="Select TOP (1) id_template2object, begin_date as dt_created_template2object&#xA;From [frs_rss].[rss].[p_template2object]&#xA;Where (id_partition = 0 OR id_partition = 2)&#xA;AND id_row = &#xA;(&#xA;Select TOP (1) [id_row_max]&#xA;FROM&#xA;(&#xA;SELECT Max([id_row]) as id_row_max&#xA;  FROM [frs_rss].[rss].[p_template2object]&#xA;  Where id_partition = 0&#xA;&#xA;UNION ALL&#xA;&#xA;SELECT Max([id_row]) as id_row_max&#xA;  FROM [frs_rss].[rss].[p_template2object]&#xA;  Where id_partition = 2&#xA;) RM &#xA;ORDER BY [id_row_max] DESC&#xA;)"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="id_template2object"
+            SQLTask:DtsVariableName="User::id_template2object" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="dt_created_template2object"
+            SQLTask:DtsVariableName="User::dt_created_template2object" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\GetTemplate2object"
+      DTS:CreationName="SSIS.Pipeline.3"
+      DTS:Description="Задача потока данных"
+      DTS:DTSID="{47e3377a-cc53-49f4-a6d4-a3dd0bf1a4e8}"
+      DTS:ExecutableType="SSIS.Pipeline.3"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="GetTemplate2object"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\GetTemplate2object\Template2Object"
+              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              contactInfo="Источник &quot;OLE DB&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;7"
+              description="Источник &quot;OLE DB&quot;"
+              name="Template2Object"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Время ожидания команды, в секундах. Величина 0 означает неограниченное время ожидания."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Указывает имя объекта базы данных, используемого для открытия набора строк."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Указывает переменную, содержащую имя объекта базы данных, используемого для открытия набора строк."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Команда SQL для выполнения."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT TOP 100 PERCENT
+       [id_template2object]
+      ,[id_agent]
+      ,[id_point]
+      ,[id_template]
+      ,[id_agent_project]
+      ,[dt_created] as begin_date
+      ,[id_action]
+  FROM [audit].[template_template2object]
+  Where id_audit &gt;?
+  ORDER BY [id_audit]</property>
+                <property
+                  dataType="System.String"
+                  description="Переменная, содержащая команду SQL для выполнения."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Вызывает безусловное использование значение свойства DefaultCodePage при описании символьных данных."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает используемый режим доступа к базе данных."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="Сопоставления между параметрами в команде SQL и переменными."
+                  name="ParameterMapping">"Параметр0:Input",{2CA52774-68F6-4610-9BDE-82AAC8D21F0E};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\GetTemplate2object\Template2Object.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[c-rss-1\rss.frs_rss]"
+                  connectionManagerRefId="Package.ConnectionManagers[c-rss-1\rss.frs_rss]"
+                  description="Соединение OLE DB среды выполнения, используемое для доступа к базе данных."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\GetTemplate2object\Template2Object.Outputs[Выход источника &quot;OLE DB&quot;]"
+                  name="Выход источника &quot;OLE DB&quot;">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\GetTemplate2object\Template2Object.Outputs[Выход источника &quot;OLE DB&quot;].Columns[begin_date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GetTemplate2object\Template2Object.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[begin_date]"
+                      lineageId="Package\GetTemplate2object\Template2Object.Outputs[Выход источника &quot;OLE DB&quot;].Columns[begin_date]"
+                      name="begin_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\GetTemplate2object\Template2Object.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_action]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GetTemplate2object\Template2Object.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_action]"
+                      lineageId="Package\GetTemplate2object\Template2Object.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_action]"
+                      name="id_action"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\GetTemplate2object\Template2Object.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_template2object]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GetTemplate2object\Template2Object.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_template2object]"
+                      lineageId="Package\GetTemplate2object\Template2Object.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_template2object]"
+                      name="id_template2object"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\GetTemplate2object\Template2Object.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_agent]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GetTemplate2object\Template2Object.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_agent]"
+                      lineageId="Package\GetTemplate2object\Template2Object.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_agent]"
+                      name="id_agent"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\GetTemplate2object\Template2Object.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_point]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GetTemplate2object\Template2Object.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_point]"
+                      lineageId="Package\GetTemplate2object\Template2Object.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_point]"
+                      name="id_point"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\GetTemplate2object\Template2Object.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_template]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GetTemplate2object\Template2Object.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_template]"
+                      lineageId="Package\GetTemplate2object\Template2Object.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_template]"
+                      name="id_template"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\GetTemplate2object\Template2Object.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_agent_project]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GetTemplate2object\Template2Object.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_agent_project]"
+                      lineageId="Package\GetTemplate2object\Template2Object.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_agent_project]"
+                      name="id_agent_project"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\GetTemplate2object\Template2Object.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[begin_date]"
+                      dataType="dbTimeStamp"
+                      name="begin_date" />
+                    <externalMetadataColumn
+                      refId="Package\GetTemplate2object\Template2Object.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_action]"
+                      dataType="i4"
+                      name="id_action" />
+                    <externalMetadataColumn
+                      refId="Package\GetTemplate2object\Template2Object.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_template2object]"
+                      dataType="i4"
+                      name="id_template2object" />
+                    <externalMetadataColumn
+                      refId="Package\GetTemplate2object\Template2Object.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_agent]"
+                      dataType="i4"
+                      name="id_agent" />
+                    <externalMetadataColumn
+                      refId="Package\GetTemplate2object\Template2Object.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_point]"
+                      dataType="i4"
+                      name="id_point" />
+                    <externalMetadataColumn
+                      refId="Package\GetTemplate2object\Template2Object.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_template]"
+                      dataType="i4"
+                      name="id_template" />
+                    <externalMetadataColumn
+                      refId="Package\GetTemplate2object\Template2Object.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[id_agent_project]"
+                      dataType="i4"
+                      name="id_agent_project" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\GetTemplate2object\Template2Object.Outputs[Вывод ошибок источника &quot;OLE DB&quot;]"
+                  isErrorOut="true"
+                  name="Вывод ошибок источника &quot;OLE DB&quot;">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\GetTemplate2object\Template2Object.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_template2object]"
+                      dataType="i4"
+                      lineageId="Package\GetTemplate2object\Template2Object.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_template2object]"
+                      name="id_template2object" />
+                    <outputColumn
+                      refId="Package\GetTemplate2object\Template2Object.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_agent]"
+                      dataType="i4"
+                      lineageId="Package\GetTemplate2object\Template2Object.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_agent]"
+                      name="id_agent" />
+                    <outputColumn
+                      refId="Package\GetTemplate2object\Template2Object.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_point]"
+                      dataType="i4"
+                      lineageId="Package\GetTemplate2object\Template2Object.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_point]"
+                      name="id_point" />
+                    <outputColumn
+                      refId="Package\GetTemplate2object\Template2Object.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_template]"
+                      dataType="i4"
+                      lineageId="Package\GetTemplate2object\Template2Object.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_template]"
+                      name="id_template" />
+                    <outputColumn
+                      refId="Package\GetTemplate2object\Template2Object.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_agent_project]"
+                      dataType="i4"
+                      lineageId="Package\GetTemplate2object\Template2Object.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_agent_project]"
+                      name="id_agent_project" />
+                    <outputColumn
+                      refId="Package\GetTemplate2object\Template2Object.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[begin_date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\GetTemplate2object\Template2Object.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[begin_date]"
+                      name="begin_date" />
+                    <outputColumn
+                      refId="Package\GetTemplate2object\Template2Object.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_action]"
+                      dataType="i4"
+                      lineageId="Package\GetTemplate2object\Template2Object.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[id_action]"
+                      name="id_action" />
+                    <outputColumn
+                      refId="Package\GetTemplate2object\Template2Object.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\GetTemplate2object\Template2Object.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\GetTemplate2object\Template2Object.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\GetTemplate2object\Template2Object.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\GetTemplate2object\Загрузка аудита шаблона"
+              componentClassID="{93FFEC66-CBC8-4C7F-9C6A-CB1C17A7567D}"
+              contactInfo="Команда OLE DB;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;2"
+              description="Выполняет инструкцию SQL для каждой строки в потоке данных. Пример: вызов хранимой процедуры &quot;new employee setup&quot; для всех строк в таблице &quot;new employees&quot;. Примечание. Выполнение инструкции SQL для всех строк большого потока данных может занять длительное время."
+              name="Загрузка аудита шаблона"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Время ожидания команды, в секундах. Величина 0 означает неограниченное время ожидания."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Команда SQL для выполнения."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">Exec rss.template2object_change ?, ?, ?, ?, ?, ?, ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
+                  name="DefaultCodePage">1251</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\GetTemplate2object\Загрузка аудита шаблона.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[c-rss-1\rss.frs_rss]"
+                  connectionManagerRefId="Package.ConnectionManagers[c-rss-1\rss.frs_rss]"
+                  description="Соединение OLE DB среды выполнения, используемое для доступа к базе данных."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\GetTemplate2object\Загрузка аудита шаблона.Inputs[Вход команды OLE DB]"
+                  errorOrTruncationOperation="Выполнение команды"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Вход команды OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\GetTemplate2object\Загрузка аудита шаблона.Inputs[Вход команды OLE DB].Columns[id_action]"
+                      cachedDataType="i4"
+                      cachedName="id_action"
+                      externalMetadataColumnId="Package\GetTemplate2object\Загрузка аудита шаблона.Inputs[Вход команды OLE DB].ExternalColumns[@id_action]"
+                      lineageId="Package\GetTemplate2object\Template2Object.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_action]" />
+                    <inputColumn
+                      refId="Package\GetTemplate2object\Загрузка аудита шаблона.Inputs[Вход команды OLE DB].Columns[begin_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="begin_date"
+                      externalMetadataColumnId="Package\GetTemplate2object\Загрузка аудита шаблона.Inputs[Вход команды OLE DB].ExternalColumns[@begin_date]"
+                      lineageId="Package\GetTemplate2object\Template2Object.Outputs[Выход источника &quot;OLE DB&quot;].Columns[begin_date]" />
+                    <inputColumn
+                      refId="Package\GetTemplate2object\Загрузка аудита шаблона.Inputs[Вход команды OLE DB].Columns[id_template2object]"
+                      cachedDataType="i4"
+                      cachedName="id_template2object"
+                      externalMetadataColumnId="Package\GetTemplate2object\Загрузка аудита шаблона.Inputs[Вход команды OLE DB].ExternalColumns[@id_template2object]"
+                      lineageId="Package\GetTemplate2object\Template2Object.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_template2object]" />
+                    <inputColumn
+                      refId="Package\GetTemplate2object\Загрузка аудита шаблона.Inputs[Вход команды OLE DB].Columns[id_agent]"
+                      cachedDataType="i4"
+                      cachedName="id_agent"
+                      externalMetadataColumnId="Package\GetTemplate2object\Загрузка аудита шаблона.Inputs[Вход команды OLE DB].ExternalColumns[@id_agent]"
+                      lineageId="Package\GetTemplate2object\Template2Object.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_agent]" />
+                    <inputColumn
+                      refId="Package\GetTemplate2object\Загрузка аудита шаблона.Inputs[Вход команды OLE DB].Columns[id_point]"
+                      cachedDataType="i4"
+                      cachedName="id_point"
+                      externalMetadataColumnId="Package\GetTemplate2object\Загрузка аудита шаблона.Inputs[Вход команды OLE DB].ExternalColumns[@id_point]"
+                      lineageId="Package\GetTemplate2object\Template2Object.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_point]" />
+                    <inputColumn
+                      refId="Package\GetTemplate2object\Загрузка аудита шаблона.Inputs[Вход команды OLE DB].Columns[id_template]"
+                      cachedDataType="i4"
+                      cachedName="id_template"
+                      externalMetadataColumnId="Package\GetTemplate2object\Загрузка аудита шаблона.Inputs[Вход команды OLE DB].ExternalColumns[@id_template]"
+                      lineageId="Package\GetTemplate2object\Template2Object.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_template]" />
+                    <inputColumn
+                      refId="Package\GetTemplate2object\Загрузка аудита шаблона.Inputs[Вход команды OLE DB].Columns[id_agent_project]"
+                      cachedDataType="i4"
+                      cachedName="id_agent_project"
+                      externalMetadataColumnId="Package\GetTemplate2object\Загрузка аудита шаблона.Inputs[Вход команды OLE DB].ExternalColumns[@id_agent_project]"
+                      lineageId="Package\GetTemplate2object\Template2Object.Outputs[Выход источника &quot;OLE DB&quot;].Columns[id_agent_project]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\GetTemplate2object\Загрузка аудита шаблона.Inputs[Вход команды OLE DB].ExternalColumns[@id_action]"
+                      dataType="i4"
+                      name="@id_action">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Сведения о параметрах. Соответствуют значениям DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\GetTemplate2object\Загрузка аудита шаблона.Inputs[Вход команды OLE DB].ExternalColumns[@begin_date]"
+                      dataType="dbTimeStamp"
+                      name="@begin_date">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Сведения о параметрах. Соответствуют значениям DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\GetTemplate2object\Загрузка аудита шаблона.Inputs[Вход команды OLE DB].ExternalColumns[@id_template2object]"
+                      dataType="i4"
+                      name="@id_template2object">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Сведения о параметрах. Соответствуют значениям DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\GetTemplate2object\Загрузка аудита шаблона.Inputs[Вход команды OLE DB].ExternalColumns[@id_agent]"
+                      dataType="i4"
+                      name="@id_agent">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Сведения о параметрах. Соответствуют значениям DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\GetTemplate2object\Загрузка аудита шаблона.Inputs[Вход команды OLE DB].ExternalColumns[@id_point]"
+                      dataType="i4"
+                      name="@id_point">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Сведения о параметрах. Соответствуют значениям DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\GetTemplate2object\Загрузка аудита шаблона.Inputs[Вход команды OLE DB].ExternalColumns[@id_template]"
+                      dataType="i4"
+                      name="@id_template">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Сведения о параметрах. Соответствуют значениям DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\GetTemplate2object\Загрузка аудита шаблона.Inputs[Вход команды OLE DB].ExternalColumns[@id_agent_project]"
+                      dataType="i4"
+                      name="@id_agent_project">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Сведения о параметрах. Соответствуют значениям DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\GetTemplate2object\Загрузка аудита шаблона.Outputs[Выход команды OLE DB]"
+                  exclusionGroup="1"
+                  name="Выход команды OLE DB"
+                  synchronousInputId="Package\GetTemplate2object\Загрузка аудита шаблона.Inputs[Вход команды OLE DB]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\GetTemplate2object\Загрузка аудита шаблона.Outputs[Вывод ошибок команды OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Вывод ошибок команды OLE DB"
+                  synchronousInputId="Package\GetTemplate2object\Загрузка аудита шаблона.Inputs[Вход команды OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\GetTemplate2object\Загрузка аудита шаблона.Outputs[Вывод ошибок команды OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\GetTemplate2object\Загрузка аудита шаблона.Outputs[Вывод ошибок команды OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\GetTemplate2object\Загрузка аудита шаблона.Outputs[Вывод ошибок команды OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\GetTemplate2object\Загрузка аудита шаблона.Outputs[Вывод ошибок команды OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\GetTemplate2object.Paths[Выход источника &quot;OLE DB&quot;]"
+              endId="Package\GetTemplate2object\Загрузка аудита шаблона.Inputs[Вход команды OLE DB]"
+              name="Выход источника &quot;OLE DB&quot;"
+              startId="Package\GetTemplate2object\Template2Object.Outputs[Выход источника &quot;OLE DB&quot;]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
@@ -2549,6 +3083,14 @@ ORDER BY id_audit</property>
       DTS:ObjectName="Ограничение 2 1"
       DTS:To="Package\GetMaxIdAuditCostLine" />
     <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Ограничение 2 1 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{292872a3-3456-4b76-b3b6-d8089f2f668c}"
+      DTS:From="Package\GetMaxTemplate2object"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Ограничение 2 1 1"
+      DTS:To="Package\GetMaxIdAuditTemplate2object" />
+    <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Ограничение 3]"
       DTS:CreationName=""
       DTS:DTSID="{67a8295d-dde1-4cd3-b2c5-aef0bf6343fd}"
@@ -2564,6 +3106,14 @@ ORDER BY id_audit</property>
       DTS:LogicalAnd="True"
       DTS:ObjectName="Ограничение 3 1"
       DTS:To="Package\GetCostLine" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Ограничение 3 1 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{29aaf59c-acd7-408c-8b90-d48ddc110e06}"
+      DTS:From="Package\GetMaxIdAuditTemplate2object"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Ограничение 3 1 1"
+      DTS:To="Package\GetTemplate2object" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Ограничение 4]"
       DTS:CreationName=""
@@ -2633,6 +3183,18 @@ ORDER BY id_audit</property>
           Size="190,42"
           Id="Package\GetMaxIdAuditCostLine"
           TopLeft="776,238" />
+        <NodeLayout
+          Size="229,42"
+          Id="Package\GetMaxIdAuditTemplate2object"
+          TopLeft="1025,237" />
+        <NodeLayout
+          Size="195,42"
+          Id="Package\GetMaxTemplate2object"
+          TopLeft="1039,140" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\GetTemplate2object"
+          TopLeft="1051,322" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Ограничение]"
           TopLeft="216.75,186">
@@ -2744,6 +3306,28 @@ ORDER BY id_audit</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package.PrecedenceConstraints[Ограничение 2 1 1]"
+          TopLeft="1138,182">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55"
+              Start="0,0"
+              End="0,47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package.PrecedenceConstraints[Ограничение 3]"
           TopLeft="416.25,280">
           <EdgeLayout.Curve>
@@ -2768,6 +3352,28 @@ ORDER BY id_audit</property>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Ограничение 3 1]"
           TopLeft="869.25,280">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43"
+              Start="0,0"
+              End="0,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Ограничение 3 1 1]"
+          TopLeft="1139.25,279">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2935,7 +3541,7 @@ ORDER BY id_audit</property>
     design-time-name="Package\GetCost">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="154,42"
           Id="Package\GetCost\Select Cost"
@@ -2975,7 +3581,9 @@ ORDER BY id_audit</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2993,7 +3601,7 @@ ORDER BY id_audit</property>
     design-time-name="Package\GetCostLine">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph" xmlns:s="clr-namespace:System;assembly=mscorlib">
         <NodeLayout
           Size="127,42"
           Id="Package\GetCostLine\Cost_Line"
@@ -3021,7 +3629,9 @@ ORDER BY id_audit</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <GroupLayout
@@ -3044,6 +3654,79 @@ ORDER BY id_audit</property>
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\GetCostLine\Cost_Line">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\GetTemplate2object">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib">
+        <NodeLayout
+          Size="161,42"
+          Id="Package\GetTemplate2object\Template2Object"
+          TopLeft="62.5,35.5" />
+        <NodeLayout
+          Size="226,42"
+          Id="Package\GetTemplate2object\Загрузка аудита шаблона"
+          TopLeft="16.5,123.5" />
+        <EdgeLayout
+          Id="Package\GetTemplate2object.Paths[Выход источника &quot;OLE DB&quot;]"
+          TopLeft="143,77.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-13.5,46"
+              Start="0,0"
+              End="-13.5,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19"
+                    Point2="0,23"
+                    Point3="-4,23" />
+                  <mssgle:LineSegment
+                    End="-9.5,23" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-9.5,23"
+                    Point2="-13.5,23"
+                    Point3="-13.5,27" />
+                  <mssgle:LineSegment
+                    End="-13.5,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <GroupLayout
+          Text="Группа "
+          ParentId="Package\GetTemplate2object"
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="260,221"
+          Size="260,264"
+          Id="b5ef5ac8-7b1e-4b99-8474-822a06e22acf"
+          TopLeft="54,31">
+          <GroupLayout.ChildrenIds>
+            <s:String>Package\GetTemplate2object\Template2Object</s:String>
+            <s:String>Package\GetTemplate2object\Загрузка аудита шаблона</s:String>
+            <s:String>Package\GetTemplate2object.Paths[Выход источника "OLE DB"]</s:String>
+          </GroupLayout.ChildrenIds>
+        </GroupLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\GetTemplate2object\Template2Object">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
